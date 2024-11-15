@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+        </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- font-family: "Kanit", sans-serif; -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap">
+
+    <link rel="stylesheet" href="basket.css">
+</head>
+
+<body>
+    <div class="main_page">
+        <div class="cnt_menu">
+            <div class="btn_all_basket">
+                <p>All </p>
+            </div>
+            <div class="cnt_day1 wekDay ">
+                <p></p>
+            </div>
+
+            <div class="cnt_day2 wekDay">
+                <p></p>
+            </div>
+
+            <div class="cnt_day3 wekDay">
+                <p></p>
+            </div>
+
+            <div class="cnt_day4 wekDay">
+                <p></p>
+            </div>
+
+            <div class="cnt_day5 wekDay">
+                <p></p>
+            </div>
+
+            <div class="cnt_day6 wekDay">
+                <p></p>
+            </div>
+
+            <div class="cnt_day7 wekDay">
+                <p></p>
+            </div>
+
+            <div class="weck_dv">
+                <p>last weck</p>
+            </div>
+
+            <div class="btn_list_month">
+                <p>last months</p>
+                <img src="img3/menu.png" alt="">
+                <p class="choosed_month">
+                </p>
+            </div>
+
+            <div class="cnt_lis_mnth">
+                <button class="dv_month">
+                    <p>last January</p>
+                </button>
+                <button class="dv_month">
+                    <p>last February</p>
+                </button>
+                <button class="dv_month">
+                    <p>last March</p>
+                </button>
+                <button class="dv_month">
+                    <p>last April</p>
+                </button>
+                <button class="dv_month">
+                    <p>last May</p>
+                </button>
+                <button class="dv_month">
+                    <p>last June</p>
+                </button>
+                <button class="dv_month">
+                    <p>last July</p>
+                </button>
+                <button class="dv_month">
+                    <p>last August</p>
+                </button>
+                <button class="dv_month">
+                    <p>last September</p>
+                </button>
+                <button class="dv_month">
+                    <p>last October</p>
+                </button>
+                <button class="dv_month">
+                    <p>last November</p>
+                </button>
+                <button class="dv_month">
+                    <p>last December</p>
+                </button>
+            </div>
+        </div>
+        <div class="bare_ctrl">
+            <button class="btn_show_menu"><img src="img3/menu (1).png" alt="">Choose Basket</button>
+            <div class="info_bskt">
+                <p class="o_info">Basket Date</p>
+                <p class="basket_date"></p>
+            </div>
+            <div class="info_bskt">
+                <p class="o_info">Basket items</p>
+                <div class="list_items">
+
+                </div>
+            </div>
+            <div class="info_bskt">
+                <p class="o_info">Total factor</p>
+                <div class="info_bskt_son">
+                    <p class="o_info">Total price of products</p>
+                    <p class="price_of_prods"></p>
+                </div>
+                <div class="info_bskt_son">
+                    <p class="o_info">Shipping costs</p>
+                    <p class="txt_cost"></p>
+                </div>
+                <div class="info_bskt_son">
+                    <p class="o_info">Discounts</p>
+                    <p class="txt_discnt"></p>
+                </div>
+                <div class="info_bskt_son">
+                    <p class="o_info p_f_price">final price</p>
+                    <p class="Ptotale_price"></p>
+                </div>
+            </div>
+            <button id="btn_Pay" class="btn_psd">Pay</button>
+            <button id="btn_contunue_shop" class="btn_psd"><img src="img3/store.png" alt=""> Continue shopping</button>
+        </div>
+
+        <div class="cnt_btns_sho_bill">
+            <button class="btn_show_menu2"><img src="img3/menu (1).png" alt="">Choose Basket</button>
+
+            <button type="button" id="btn_show_bill"> <img src="img3/invoice.png" alt="">Bill</button>
+        </div>
+        <!-- <div class="cnt_main_prd"> -->
+        <main class="main_products">
+            <div class="cnt_product2">
+                <div class="cntImgPrd">
+                    <img src="files_product/s22-removebg-preview.png" alt="">
+                </div>
+                <div class="info_perdd">
+                    <div class="discr_txt">
+                        <p class="name_prd">dasdasd</p>
+                        <p class="desc_img2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias nam ad
+                            rerum, expedita, et minus reprehenderit vero dicta est perspiciatis necessitatibus laborum
+                            nesciunt ullam at velit! Exercitationem vitae deleniti rem.</p>
+                    </div>
+                    <div>
+                        <p class="price_prd"></p>
+                        <p class="statut_prd"></p>
+                    </div>
+                    <div class="set_quantite">
+                        <div class="cnt_inp_qu">
+                            <p class="quant_text">Quantity</p>
+                            <input type="number" class="inp_qantite" max="100">
+                        </div>
+                        <div class="imgs_pls_minus">
+                            <button class="btn_plus_quant"><img src="img3/plus.png" alt=""></button>
+                            <button class="btn_minus_quant"><img src="img3/minus.png" alt=""></button>
+                        </div>
+                    </div>
+                    <div class="cnt_btns">
+                        <button id="btn_se_deti">See detail</button>
+                        <button id="btn_drop">Drop from basket</button>
+                    </div>
+                    <div class="cnt_add_rem">
+                        <button class="btn_ad_prd">
+                            <p>Add</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+
+        <!-- </div> -->
+        <div class="shadow_cv"></div>
+        <p class="no_res"> <img src="img3/box.png" alt=""> basket is empty</p>
+
+    </div>
+    <div class="info_security">
+        <div class="txt_inf">
+            <h3>Security and Trust</h3>
+            __Secure Checkout:__</br>
+            Your payment information is processed securely. We use industry-leading encryption to protect your
+            personal data.</br>
+
+            __Trusted by Customers:__</br>
+            Our platform is trusted by thousands of customers worldwide. Check out our reviews and ratings to
+            see
+            why.
+            </br>
+            __Money-Back Guarantee:__
+            </br>
+            We offer a 30-day money-back guarantee on all purchases. Shop with confidence knowing that your
+            satisfaction is our priority.
+            </br>
+            __Privacy Protection:__</br>
+            We respect your privacy and ensure that your personal information is kept confidential. Read our
+            <a href="Privacy_Policy.html">Privacy Policy</a>for more details.
+            </br>
+            __Certified Security:__</br>
+            Our website is certified secure by leading security providers. Look for the SSL certificate and
+            trust
+            badges on our site.
+        </div>
+        <div class="txt_inf">
+
+
+            <h3>Site Policies</h3>
+
+            __Shipping Policy:__</br>
+            We offer a variety of shipping options to meet your needs. Orders are processed within 1-2 business
+            days. Delivery times and costs vary based on your location and the shipping method chosen. For more
+            details, visit our <a href="Shipping_Policy.html">Shipping Policy</a>.
+            </br>
+            __Return and Refund Policy:__</br>
+            If you are not completely satisfied with your purchase, you can return it within 30 days of receipt
+            for a full refund or exchange. Items must be in their original condition. For more information,
+            please review our <a href="Return_Refund_Policy.html">Return and Refund Policy</a>
+            </br>
+            __Privacy Policy:__</br>
+            Your privacy is important to us. We are committed to protecting your personal information and using
+            it only in accordance with our <a href="Privacy_Policy.html">Privacy Policy</a>. We do not share
+            your data with third parties
+            without your consent.
+            </br>
+            __Terms and Conditions:__</br>
+            By using our website and making a purchase, you agree to our terms and conditions. These outline the
+            rules and regulations for using our site and services. Read our
+            <a href="Terms_Conditions.html">Terms and Conditions</a> for more
+            details.
+            </br>
+            __Customer Support:__</br>
+            For any questions or concerns, please contact our customer support team at
+            [kra.Support@gmail.com] or call us at (+212) 767310612 . We are here to
+            assist you 24/7.
+        </div>
+
+    </div>
+
+    <script>
+        let user_id;
+        document.querySelector("#btn_contunue_shop").onclick = () => window.location.href = window.location.origin + '/SETWEB_project/page.html'
+        let btn_list_month = document.querySelector(".btn_list_month");
+        let btn_show_bill = document.querySelector("#btn_show_bill");
+        let cnt_product2 = document.querySelector(".cnt_product2");
+        let btn_all_basket = document.querySelector(".btn_all_basket");
+        let choosed_month = document.querySelector(".choosed_month");
+        let cnt_lis_mnth = document.querySelector(".cnt_lis_mnth");
+        let basket_date = document.querySelector(".basket_date");
+        let lis_mnth = document.querySelectorAll(".dv_month");
+        let btn_show_menu = document.querySelector(".btn_show_menu");
+        let btn_show_menu2 = document.querySelector(".btn_show_menu2");
+        let cnt_menu = document.querySelector(".cnt_menu");
+        let bare_ctrl = document.querySelector(".bare_ctrl");
+        let main_products = document.querySelector(".main_products");
+        let shadow_cv = document.querySelector(".shadow_cv");
+        let no_res = document.querySelector(".no_res");
+        btn_show_menu.onclick = () => {
+            ad_d(shadow_cv)
+            ad_d(cnt_menu, "sho_cnt_menu");
+            r(btn_show_menu, cnt_menu, "sho_cnt_menu")
+            cnt_lis_mnth.classList.remove("d");
+            r2(cnt_menu, "sho_cnt_menu2")
+
+        }
+
+        btn_show_menu2.onclick = () => {
+            ad_d(shadow_cv)
+            r2(cnt_menu, "sho_cnt_menu")
+            cnt_lis_mnth.classList.remove("d");
+            ad_d(cnt_menu, "sho_cnt_menu2");
+            r(btn_show_menu2, cnt_menu, "sho_cnt_menu2");
+
+        }
+
+        btn_show_bill.onclick = () => {
+            ad_d(shadow_cv)
+            ad_d(bare_ctrl, 'dowon_bil');
+            r(btn_show_bill, bare_ctrl, "dowon_bil");
+        }
+        window.onload = () => {
+            decode_id();
+
+        }
+        function decode_id() {
+            let url_s = window.location.search;
+            id_encoded = url_s.substring(url_s.indexOf('=') + 1);
+            id_encoded = decodeURIComponent(id_encoded);
+            id_encoded = JSON.parse(id_encoded);
+            user_id = id_encoded;
+            btn_all_basket.click();
+        }
+
+        function _(m) {
+            console.log(m)
+        }
+
+        function r(btn = "", elem, d = 'd') {
+            window.onclick = function (e) {
+                if (!btn.contains(e.target) && !elem.contains(e.target)) {
+                    elem.classList.remove(d);
+                    r2(shadow_cv)
+
+                }
+            }
+        }
+
+        let evry_prd_prce = {};
+
+        function req_select_basket(time) {
+            $(document).ready(
+                () => {
+                    $.post('get_basket.php', {
+                        user_id: user_id,
+                        time: time
+                    }).done(
+                        res => {
+                            main_products.replaceChildren()
+
+                            res = JSON.parse(res);
+                            if (res.length == 0) {
+                                price_of_prods.innerHTML = '00';
+                                Ptotale_price.innerHTML = '00';
+                                list_items.innerHTML =' No item',
+                                ad_d(no_res);
+                            } else {
+                                for (p of res) {
+                                    if (!Object.hasOwn(evry_prd_prce, p.id_product)) {
+                                        evry_prd_prce[p.id_product] = p.price
+                                    }
+                                    var cloned_cnt_ped = cnt_product2.cloneNode(true);
+                                    let img_link = p.des_img.substring(0,p.des_img.indexOf(","));
+                                    if(img_link!= ""){
+                                        cloned_cnt_ped.querySelector(".cntImgPrd").querySelector("img").src = img_link;
+                                    }
+                                    else{
+                                    cloned_cnt_ped.querySelector(".cntImgPrd").querySelector("img").src = p.des_img;
+
+                                    }
+                                    cloned_cnt_ped.querySelector(".name_prd").innerHTML = p.name_product;
+                                    cloned_cnt_ped.querySelector(".desc_img2").innerHTML = p.description;
+                                    cloned_cnt_ped.querySelector(".price_prd").innerHTML = p.price + " $";
+                                    cloned_cnt_ped.querySelector(".statut_prd").innerHTML = p.statu_prd;
+                                    cloned_cnt_ped.querySelector(".inp_qantite").value = p.quantite;
+                                    cloned_cnt_ped.setAttribute("id", p.id_product);
+                                    main_products.appendChild(cloned_cnt_ped);
+
+                                }
+                                obj_factor.items = [];
+                                btns_add();
+                                change_quantite()
+                                r2(no_res);
+                            }
+                        }
+                    )
+                }
+            )
+        }
+        function r2(elem, d = 'd') { elem.classList.remove(d) }
+        function ad_d(elem, d = 'd') { elem.classList.add(d) }
+
+        btn_all_basket.addEventListener("click", () => {
+            r2(cnt_menu, "sho_cnt_menu");
+            r2(cnt_menu, "sho_cnt_menu2");
+            r2(shadow_cv)
+
+            req_select_basket('all');
+            lis_mnth.forEach(m => {
+                m.classList.remove('active')
+                try {
+                    m.querySelector('img').remove()
+                } catch (er) { }
+            })
+            wekDays.forEach(m => {
+                m.classList.remove('active')
+                try {
+                    m.querySelector('img').remove()
+                } catch (er) { }
+
+            })
+            try {
+                weck_dv.classList.remove('active')
+                weck_dv.querySelector('img').remove()
+            } catch (er) { }
+            if (!btn_all_basket.querySelector('img')) {
+                basket_date.innerHTML = btn_all_basket.innerHTML;
+                let img = document.createElement("img");
+                img.src = "img3/tick.png";
+                btn_all_basket.insertBefore(img, btn_all_basket.children[0])
+                btn_all_basket.classList.add('active');
+                // r2(cnt_lis_mnth)
+            }
+        })
+        let wekDays = document.querySelectorAll(".wekDay");
+        let curent_date = new Date();
+        const today = new Date(curent_date);
+        const yesterday = new Date(today);
+        for (let i = 0; i < wekDays.length; i++) {
+            yesterday.setDate(today.getDate() - i);
+            const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+            const formattedYesterday = yesterday.toLocaleDateString('en-US', options);
+            to_ar = formattedYesterday.split("/")
+            wekDays[i].setAttribute("id", to_ar.join('-'));
+            if (i == 6) {
+                set_day_name();
+            }
+        }
+
+        function set_day_name() {
+            wekDays.forEach(
+                day => {
+                    let dNum = new Date(day.getAttribute("id"));
+                    switch (dNum.getDay()) {
+                        case 0:
+                            day.querySelector("p").innerHTML = "Sunday's basket ";
+                            break;
+                        case 1:
+                            day.querySelector("p").innerHTML = "Monday's basket";
+                            break;
+                        case 2:
+                            day.querySelector("p").innerHTML = "Tuesday's basket";
+                            break;
+                        case 3:
+                            day.querySelector("p").innerHTML = "Wednesday's basket";
+                            break;
+                        case 4:
+                            day.querySelector("p").innerHTML = "Thursday's basket";
+                            break;
+                        case 5:
+                            day.querySelector("p").innerHTML = "Friday's basket";
+                            break;
+                        case 6:
+                            day.querySelector("p").innerHTML = "Saturday's basket ";
+                            break;
+                    }
+
+
+                    day.onclick = () => {
+                        let date_reverse = day.getAttribute("id");
+                        date_reverse = date_reverse.split("-");
+                        var real_date = `c.date_add = '${date_reverse[2]}-${date_reverse[0]}-${date_reverse[1]}'`;
+                        req_select_basket(real_date);
+                        r2(cnt_menu, "sho_cnt_menu")
+                        r2(shadow_cv)
+                        r2(cnt_menu, "sho_cnt_menu2")
+                        lis_mnth.forEach(m => {
+                            m.classList.remove('active')
+                            try {
+                                m.querySelector('img').remove()
+                            } catch (er) { }
+                        })
+                        wekDays.forEach(m => {
+                            m.classList.remove('active')
+                            try {
+                                m.querySelector('img').remove()
+                            } catch (er) { }
+
+                        })
+                        try {
+                            weck_dv.classList.remove('active')
+                            weck_dv.querySelector('img').remove()
+                        } catch (er) { }
+                        if (!day.querySelector('img')) {
+                            basket_date.innerHTML = day.innerHTML + day.getAttribute("id")
+                            let img = document.createElement("img");
+                            img.src = "img3/tick.png";
+                            day.insertBefore(img, day.children[0])
+                            day.classList.add('active');
+                            r2(cnt_lis_mnth)
+                        }
+                        try {
+                            btn_all_basket.classList.remove('active')
+                            btn_all_basket.querySelector('img').remove()
+                        } catch (er) { }
+
+                    }
+
+                }
+            )
+            wekDays[0].querySelector("p").innerHTML = "Today's basket";
+            wekDays[1].querySelector("p").innerHTML = "Yesterday's basket";
+        }
+
+        let weck_dv = document.querySelector(".weck_dv");
+        yesterday.setDate(today.getDate() - 7);
+        const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+        const formattedYesterday = yesterday.toLocaleDateString('en-US', options);
+        to_ar = formattedYesterday.split("/");
+        var lst_wel = to_ar.join('-');
+
+
+        yesterday.setDate(today.getDate() - 14);
+        const options2 = { year: 'numeric', month: '2-digit', day: '2-digit' };
+        const formattedYesterday2 = yesterday.toLocaleDateString('en-US', options2);
+        to_ar = formattedYesterday2.split("/");
+        var lst_wel2 = to_ar.join('-');
+        weck_dv.setAttribute("id", lst_wel2 + "-" + lst_wel);
+
+        weck_dv.addEventListener("click", () => {
+            r2(shadow_cv)
+            r2(cnt_menu, "sho_cnt_menu");
+            r2(cnt_menu, "sho_cnt_menu2");
+            let date_reverse = weck_dv.getAttribute("id");
+            date_reverse = date_reverse.split("-");
+            var real_date = `c.date_add BETWEEN '${date_reverse[2]}-${date_reverse[0]}-${date_reverse[1]}' AND '${date_reverse[2]}-${date_reverse[0]}-${date_reverse[4]}'`;
+            req_select_basket(real_date);
+
+            lis_mnth.forEach(m => {
+                m.classList.remove('active')
+                try {
+                    m.querySelector('img').remove()
+                } catch (er) { }
+            })
+            wekDays.forEach(m => {
+                m.classList.remove('active')
+                try {
+                    m.querySelector('img').remove()
+                } catch (er) { }
+
+            })
+            try {
+                btn_all_basket.classList.remove('active')
+                btn_all_basket.querySelector('img').remove()
+            } catch (er) { }
+            if (!weck_dv.querySelector('img')) {
+                basket_date.innerHTML = weck_dv.innerHTML + weck_dv.getAttribute("id")
+                let img = document.createElement("img");
+                img.src = "img3/tick.png";
+                weck_dv.insertBefore(img, weck_dv.children[0])
+                weck_dv.classList.add('active');
+                r2(cnt_lis_mnth)
+            }
+
+        })
+
+
+        btn_list_month.onclick = () => {
+            cnt_lis_mnth.classList.add("d");
+            r(btn_list_month, cnt_lis_mnth);
+        }
+
+        lis_mnth.forEach(ntnt => {
+            ntnt.addEventListener("click", () => {
+                r2(cnt_menu, "sho_cnt_menu");
+                r2(shadow_cv)
+
+                r2(cnt_menu, "sho_cnt_menu2");
+                let date_reverse = ntnt.getAttribute("id");
+                date_reverse = date_reverse.split("-");
+                var real_date = `YEAR(c.date_add) =  '${date_reverse[0]}' AND MONTH(c.date_add) = '${date_reverse[1]}'`;
+                req_select_basket(real_date);
+                choosed_month.innerHTML = ntnt.innerHTML;
+                lis_mnth.forEach(m => {
+                    m.classList.remove('active')
+                    try {
+                        m.querySelector('img').remove()
+                    } catch (er) { }
+                })
+                wekDays.forEach(m => {
+                    m.classList.remove('active')
+                    try {
+                        m.querySelector('img').remove()
+                    } catch (er) { }
+
+                })
+                try {
+                    weck_dv.classList.remove('active')
+                    weck_dv.querySelector('img').remove()
+                    btn_all_basket.classList.remove('active')
+                    btn_all_basket.querySelector('img').remove()
+                } catch (er) { }
+
+                if (!ntnt.querySelector('img')) {
+                    basket_date.innerHTML = ntnt.innerHTML + ntnt.getAttribute("id")
+
+                    let img = document.createElement("img");
+                    img.src = "img3/tick.png";
+                    ntnt.insertBefore(img, ntnt.children[0])
+                    ntnt.classList.add('active');
+                    r2(cnt_lis_mnth)
+
+                }
+                else {
+                    r2(cnt_lis_mnth)
+                }
+
+
+            })
+        }
+        )
+
+        let mouths = getLastNMonths()
+        for (let i = 0; i < mouths.length; i++) {
+            lis_mnth[i].setAttribute("id", mouths[i]);
+            let mony = new Date(mouths[i]);
+            month_naem = mony.toLocaleString('en-us', { month: "long" });
+            lis_mnth[i].querySelector("p").innerHTML = "Last " + month_naem;
+        }
+
+        lis_mnth[0].querySelector("p").innerHTML = "Current month"
+        function getLastNMonths() {
+            const months = [];
+            const today = new Date();
+            for (let i = 0; i < 12; i++) {
+                const date = new Date(today.getFullYear(), today.getMonth() - i, 1); // Set to the 1st of the month
+                const year = date.getFullYear();
+                const month = String(date.getMonth() + 1).padStart(2, '0'); // getMonth() returns 0-11, so add 1 and pad with zero if necessary
+                months.push(`${year}-${month}`);
+            }
+            return months;
+        }
+
+
+    </script>
+    <script>
+        let list_items = document.querySelector('.list_items');
+        let price_of_prods = document.querySelector('.price_of_prods');
+        let Ptotale_price = document.querySelector('.Ptotale_price');
+        let txt_discnt = document.querySelector('.txt_discnt');
+        let txt_cost = document.querySelector('.txt_cost');
+        let obj_factor = {
+            items: {},
+            discount :0.5,
+            cost : 100, 
+            originalat_total_price :0,
+            totale_price_prd: function (discounts = this.discount) {
+                let totale_factor = 0;
+                for (var i of Object.keys(this.items)) {
+                    totale_factor += this.items[i].T_price();
+                }
+                this.originalat_total_price = totale_factor
+                totale_factor =(totale_factor * discounts) + this.cost;
+                return totale_factor;
+            },
+            calcule_factor: function () {
+                list_items.replaceChildren();
+                price_of_prods.innerHTML = this.originalat_total_price + " $";
+                Ptotale_price.innerHTML = this.totale_price_prd() + " $";
+                txt_discnt.innerHTML = parseFloat(1 - this.discount) *100 +" %" ;
+                txt_cost.innerHTML =this.cost +" $" ;
+                var indx = 1;
+                for (var i of Object.keys(this.items)) {
+                    let clon_p = document.createElement("p");
+                    clon_p.innerHTML = ` ${indx} - ${this.items[i].name} ,  Quantite : ${this.items[i].quantite} ,TOTALE PRICE = ${this.items[i].price_for_one * this.items[i].quantite}`;
+                    list_items.append(clon_p);
+                    indx++;
+                }
+            }
+        }
+
+
+        function btns_add() {
+            let btn_ad_prd = document.querySelectorAll(".btn_ad_prd");
+            btn_ad_prd.forEach(
+                btn => {
+                    btn.onclick = () => {
+                        let prd_idBTN = btn.parentElement.parentElement.parentElement;
+                        var ord_id_2 = prd_idBTN.getAttribute("id");
+                        if (!btn.querySelector('img')) {
+                            let img = document.createElement("img");
+                            img.src = "img3/done.png";
+                            btn.insertBefore(img, btn.children[0]);
+                            btn.querySelector("p").innerHTML = 'Added';
+                            ad_d(btn, 'active_btn');
+                            obj_factor.items[ord_id_2] = {
+                                id: prd_idBTN.getAttribute("id"),
+                                name: prd_idBTN.querySelector(".name_prd").innerHTML,
+                                price_for_one: evry_prd_prce[ord_id_2],
+                                quantite: prd_idBTN.querySelector(".inp_qantite").value,
+                                T_price: function () {
+                                    return this.price_for_one * this.quantite
+                                }
+                            }
+                        }
+                        else {
+                            btn.querySelector('img').remove();
+                            btn.querySelector("p").innerHTML = 'Add';
+                            r2(btn, 'active_btn');
+                            delete obj_factor.items[ord_id_2];
+                        }
+                        obj_factor.totale_price_prd();
+                        obj_factor.calcule_factor()
+                    }
+                    btn.click();
+                }
+            )
+        }
+        function change_quantite() {
+            let btn_minus_quant = document.querySelectorAll('.btn_minus_quant');
+            let btn_plus_quant = document.querySelectorAll('.btn_plus_quant');
+            btn_plus_quant.forEach(btn => {
+                btn.onclick = () => {
+                    let parent_btn = btn.parentElement.parentElement.parentElement.parentElement;
+                    var inp_qu = parent_btn.querySelector(".inp_qantite");
+                    var this_add_btn = parent_btn.querySelector(".btn_ad_prd");
+                    inp_qu.value++;
+                    if (this_add_btn.querySelector('img')) {
+                        this_add_btn.click();
+                    }
+
+                }
+
+            })
+
+            btn_minus_quant.forEach(btn => {
+                btn.onclick = () => {
+                    let parent_btn = btn.parentElement.parentElement.parentElement.parentElement;
+                    var inp_qu = parent_btn.querySelector(".inp_qantite");
+                    var this_add_btn = parent_btn.querySelector(".btn_ad_prd");
+                    if (inp_qu.value > 1) {
+                        inp_qu.value--;
+                        if (this_add_btn.querySelector('img')) {
+                            this_add_btn.click();
+                        }
+                    }
+                }
+
+            })
+
+            var inp_quss = document.querySelectorAll(".inp_qantite");
+            inp_quss.forEach(inp => {
+                inp.onkeydown = () => {
+                    var this_btn_add = inp.parentElement.parentElement.parentElement.parentElement.querySelector(".btn_ad_prd")
+                    if (this_btn_add.querySelector('img')) {
+                        this_btn_add.click();
+                    }
+                }
+            })
+        }
+
+    </script>
+</body>
+
+</html>

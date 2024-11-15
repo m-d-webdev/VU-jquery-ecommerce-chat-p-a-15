@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+        </script>
+    <link rel="stylesheet" href="pg_sell.css">
+    <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="welcoming_pg_sell">
+        <div class="bare_menu">
+            <div class="logo_page">
+                <p class="txt_logo">Kratrit</p>
+            </div>
+            <a target="_blank" href="https://youtu.be/5FJfEgE9RNg?si=gCVj1Ry3Y7qN0K_r">Product selling policy</a>
+            <button class="btn_scrol_bottom">User Guide</button>
+        </div>
+        <p class="title_page_sell">Add a new product</p>
+
+    </div>
+    <main class="pg_sell">
+        <p class="p_not_ster">Start by filling in the box </p>
+        <div class="cnt_saer1">
+            <div class="cnt_info_prod1">
+                <div class="cnt_form1">
+                    <img src="img3/box copy.png" alt="">
+                    <input type="text" name="prod_name" id="prod_name" placeholder="">
+                    <label for="prod_name" class="lbl_form">Product Name</label>
+                </div>
+                <div class="cnt_form1">
+                    <img src="img3/product-categories.png" alt="">
+                    <label class="lbl_foem1">Product Type</label>
+                    <select name="product_tp_select" id="product_tp_select">
+                        <option value="">Select a type of product</option>
+                        <option value="phone">Phones</option>
+                        <option value="watche">watches</option>
+                        <option value="headphone">headphones</option>
+                        <option value="computer">Computers</option>
+                        <option value="c_attachment">Computer attachments</option>
+                        <option value="screen">Screens</option>
+                        <option value="clothe">clothes (Summer)</option>
+                        <option value="w_clothing">Women's Clothing</option>
+                        <option value="pant">pants</option>
+                        <option value="s_pant">Short pants</option>
+                        <option value="shoe">shoes</option>
+                        <option value="slipper">slippers</option>
+                        <option value="w_bag">women bags</option>
+                        <option value="bag">bags</option>
+                        <option value="glasse">glasses</option>
+                        <option value="Hat">Hats</option>
+                        <option value="s_else">something else</option>
+                        <option value="Arts_Crafts">Arts , Crafts</option>
+                        <option value="Automotive">Automotive</option>
+                        <option value="Baby">Baby</option>
+                        <option value="Beauty_Personal_Care">Beauty , Personal Care</option>
+                        <option value="Books">Books</option>
+                        <option value="Boys_Fashion">Boys' Fashion</option>
+                        <option value="Deals">Deals</option>
+                        <option value="Music">Music</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Girls_Fashion">Girls' Fashion</option>
+                        <option value="Health_Household">Health , Household</option>
+                        <option value="Home_Kitchen">Home , Kitchen</option>
+                        <option value="Industrial_Scientific">Industrial , Scientific</option>
+                        <option value="Store">Store</option>
+                        <option value="Luggage">Luggage</option>
+                        <option value="Men_Fashion">Men's Fashion</option>
+                        <option value="Movies_TV">Movies , TV</option>
+                        <option value="Music_CDs_Vinyl">Music, CDs , Vinyl</option>
+                        <option value="Pet_Supplies">Pet Supplies</option>
+                        <option value="Video"> Video</option>
+                        <option value="Software">Software</option>
+                        <option value="Sports_Outdoors">Sports , Outdoors</option>
+                        <option value="Tools_Home_Improvement">Tools , Home Improvement</option>
+                        <option value="Toys_Games">Toys , Games</option>
+                        <option value="Video_Games">Video Games</option>
+                        <option value="Women_Fashion">Women's Fashion</option>
+                    </select>
+                </div>
+
+                <div class="cnt_form1">
+                    <img src="img3/battery-status-with-three-quarters-charged.png" alt="">
+                    <label class="lbl_foem1">Product status</label>
+                    <select name="select_statu" id="select_statu">
+                        <option value="">Select tem status</option>
+                        <option value="new">New</option>
+                        <option value="Lile_new">Usid-Like New</option>
+                        <option value="good">Usid-Good</option>
+                        <option value="fair">Usid-Fair</option>
+                    </select>
+                </div>
+
+                <div class="cnt_form1">
+                    <img src="img3/inventory-management.png" alt="">
+                    <input type="text" name="" id="inp_inventory" value="" placeholder="">
+                    <label for="" class="lbl_form">inventory</label>
+                </div>
+                <p class="p_alert_slow_qu"><img src="img3/danger.png" alt="">You are required to notify us when stock is
+                    low !</p>
+
+                <div class="delivery_dv">
+                    <img class="delivery_dv_img" src="img3/fast-delivery.png" alt="">
+                    <label for="" class="lbl_form_delvry">Delivery </label>
+                    <div class="delevry_choose">
+                        <button id="btn_our_delvry">
+                            <p>Relying on the company's delivery</p>
+                        </button>
+                        <div>
+                            <button id="btn_client_oen_delvry">
+                                <p>Provide my own delivery</p>
+                            </button>
+                            <div class="dv_cost_dlvr">
+                                <input type="text" placeholder="" class="cl_inpt_delvr_cost" id="inpt_delvr_cost">
+                                <label for="inpt_delvr_cost" class="lbl_cost">Delivery cost</label>
+                            </div>
+                        </div>
+                        <button id="btn_none_delvry">
+                            <p> Without delivery </p>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="cnt_form1">
+                    <img src="img3/tag.png" alt="">
+                    <input type="text" name="prod_price" id="prod_price" value="" placeholder="">
+                    <label for="prod_price" class="lbl_form">Product Price</label>
+                </div>
+
+                <div class="cnt_form1">
+                    <img src="img3/location.png" alt="">
+                    <input type="text" name="inp_location" id="inp_location" placeholder="">
+                    <label for="inp_location" class="lbl_form">Location</label>
+                </div>
+            </div>
+
+
+
+            <div class="cnt_info_prod2">
+                <div class="cnt_form2">
+                    <p class="not_desc">Enter some word that will help the buyer find the item</p>
+                    <div class="input-box" contenteditable="true"></div>
+                    <label class="inpu_desc">Description</label>
+                </div>
+
+                <div class="cnt_form3">
+                    <label class="lbl_add_photo">Add photos </label>
+                    <div class="cnt_IMAGES_product">
+                        <div class="cnt_imgs_desc">
+                            <img class="img_desc" src="" alt="">
+                            <button class="btn_removethis_img"><img src="img/trash (1).png" alt=""
+                                    class="img_removethis"></button>
+                        </div>
+                        <span class="span_cntrl_img">
+                            <img src="img2/image-gallery.png" alt="">
+                            <p>Select photos</p>
+                            <input type="file" name="inp_images" id="inp_images" style="display: none;" multiple>
+                        </span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <button class="btn_share">Share</button>
+    </main>
+    <main class="aletr_succss">
+        <div class="popup">
+            <div class="dv_1">
+                <p>Your product has been successfully deployed</p>
+                <button id="btn_done"><img src="img2/basic-tick.png" alt="">Done</button>
+                <button id="btn_home"> <img src="img2/home.png" alt="">Home</button>
+            </div>
+            <div class="dv_2">
+                <img src="img2/Download Young handsome man business isolated on the white background vector illustration for free.jfif"" alt="">
+            </div>
+        </div>
+    </main>
+    <main class=" info_about_selll">
+                <h3>Welcome in <span>Kratrit</span>
+                </h3>
+
+                <p>
+                    We are here to help you sell your products easily and efficiently. Here’s how the selling process
+                    works
+                    on our platform:
+
+                </p>
+                <h4>1. Enter Product Details:</h4>
+                <p>
+                    - Fill in all the required information about your product, including the title, description, images,
+                    price, and stock. The more detailed your information, the better your chances of making a sale.
+                </p>
+                <h4>2. Listing Your Product:</h4>
+                <p>
+                    - Once you’ve entered all the details and they are approved, we will list your product on our
+                    platform,
+                    making it available to thousands of potential customers.
+                </p>
+                <h4>3. Receiving Orders:</h4>
+                <p>
+                    - When your product is sold, we handle the payment process from the buyer.
+                </p>
+                <h4>
+                    4. Shipping and Delivery:
+                </h4>
+                <p>
+                    - We will coordinate with you to ensure the product is shipped and delivered to the buyer quickly
+                    and
+                    efficiently. You can rely on our trusted shipping services.
+                </p>
+                <h4>
+                    5. Receiving Your Payments:
+                </h4>
+                <p>
+                    - After the sale is completed and the product is delivered, we will transfer the payment for the
+                    product
+                    to your wallet on our platform. You can withdraw the funds from your wallet at any time.
+                </p>
+                <p>
+                    We are committed to providing the best selling experience for you and your customers. If you have
+                    any
+                    questions or need assistance, please do not hesitate to contact our seller support team.
+                </p>
+                <p>Be a genius at selling your product</p>
+                <p> <img src="img3/good-luck (1).png" class="img_good_luck" alt=""> We wish you successful and
+                    profitable
+                    sales!</p>
+
+                ---
+    </main>
+
+    <script src=" pg_sell_script.js"></script>
+
+</body>
+
+</html>

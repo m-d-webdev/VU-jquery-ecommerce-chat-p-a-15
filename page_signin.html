@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style_signin.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap">
+
+    <!-- font-family: "Kanit", sans-serif; -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+        </script>
+
+    <style>
+        .cnt_serachnum {
+            width: 380px;
+            align-items: flex-start;
+            display: none;
+            height: 550px;
+            animation: to_TOP .5s alternate;
+
+        }
+
+        #sel_number {
+            position: relative;
+        }
+
+        .flag_img {
+            /* position: absolute; */
+            width: 30px;
+            left: -25px;
+        }
+
+        @keyframes to_TOP {
+            0% {
+                height: 0px;
+                opacity: 0;
+            }
+
+            100% {
+                height: 550px;
+            }
+        }
+
+        .list_num {
+            overflow: auto;
+            height: 500px;
+            background-color: #fff;
+        }
+
+        .cnt_serachnum .scnt_sdf input {
+            width: 95%;
+            padding: 6px;
+            font-size: 14px;
+            outline: none;
+            margin-bottom: 6px;
+            border: solid 1px rgba(0, 0, 0, 0.368);
+            border-radius: 10px;
+        }
+
+        .cnt_serachnum .scnt_sdf {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .no_res_contr img {
+            margin-left: 15px;
+            width: 30px;
+        }
+
+        .no_res_contr p {
+            font-size: 16px;
+            font-weight: 600;
+            opacity: .7;
+        }
+
+        .no_res_contr {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 60px;
+            display: none;
+        }
+
+        .cnt_inpy1 .atert_inp:focus~.lbl_forinp1 {
+            color: red;
+        }
+
+        .cnt_inpy1 .atert_inp:focus {
+            filter: drop-shadow(0 0 1px rgba(255, 0, 0, 0.496));
+            border: solid 1px rgba(255, 0, 0, 0.719);
+        }
+
+        .cnt_inpy1 .atert_inp {
+            filter: drop-shadow(0 0 1px rgba(255, 0, 0, 0.496));
+            border: solid 1px rgba(255, 0, 0, 0.719);
+        }
+
+
+        .cnt_inpy3 .atert_inp:focus {
+            border-bottom: solid 1px rgba(255, 0, 0, 0.719);
+        }
+
+        .cnt_inpy3 .atert_inp {
+            border-bottom: solid 1px rgba(255, 0, 0, 0.719);
+        }
+
+
+
+        .display_f {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="main1">
+        <form action="" class="my_from1">
+            <div class="cnt_inpy1">
+                <input type="text" id="inp_firstname" placeholder="">
+                <label for="inp_firstname" class="lbl_forinp1">Fisrt Name </label>
+            </div>
+            <div class="cnt_inpy1">
+                <input type="text" id="inp_lastname" placeholder="">
+                <label for="inp_lastname" class="lbl_forinp1">Last Name</label>
+            </div>
+
+            <div class="cnt_inpy1">
+                <input type="text" id="inp_username" placeholder="">
+                <label for="inp_username" class="lbl_forinp1">Business Name</label>
+            </div>
+            <div class="cnt_BD">
+                <p class="title_bd">Birth Day</p>
+                <div class="cnt_inp1">
+                    <input type="text" maxlength="4" id="year_inp" placeholder="">
+                    <label for="year_inp" class="lbl_bd">Year</label>
+                </div>
+
+                <div class="cnt_inp1">
+                    <input type="text" maxlength="2" id="month_inp" placeholder="">
+                    <label for="month_inp" class="lbl_bd">Month</label>
+                </div>
+
+                <div class="cnt_inp1">
+                    <input type="text" maxlength="2" id="day_inp" placeholder="">
+                    <label for="day_inp" class="lbl_bd">Day</label>
+                </div>
+
+            </div>
+
+            <div class="cnt_gender">
+                <p class="p_gender">Gender</p>
+                <div class="for_man">
+                    <img src="img2/businessman.png" alt="">
+                    <p>Male</p>
+                </div>
+
+                <div class="for_woman">
+                    <img src="img2/hairstyle.png" alt="">
+                    <p>Female</p>
+                </div>
+
+                <div class="for_none">
+                    <img src="img2/personal-data.png" alt="">
+                    <p>Private</p>
+                </div>
+
+            </div>
+
+            <div class="cnt_inpy3">
+                <div class="cnt_serachnum">
+                    <div class="scnt_sdf">
+                        <input type="search" id="inp_ser_numb" placeholder="Search">
+                    </div>
+                    <div class="no_res_contr">
+                        <p>No results</p>
+                        <img src="img2/chercher.png" alt="">
+                    </div>
+                    <div class="list_num">
+
+                    </div>
+                </div>
+
+                <label for="inp_phone" class="lbl_forinp1">Phone</label>
+
+                <div name="" id="sel_number">
+                    <img src="" class="flag_img" alt="">
+                    <p>Dial</p><img class="btn_open_menu_contie" src="img2/menu.png" alt="">
+                </div>
+                <div class="dv_nmbr">
+                    <input type="text" id="inp_phone" placeholder="">
+                </div>
+            </div>
+            <div class="cnt_inpy1">
+                <input type="text" id="inp_adress" placeholder="">
+                <label for="inp_adress" class="lbl_forinp1">Adress</label>
+            </div>
+            <button class="submit_1" type="button">Next</button>
+        </form>
+        <form action="" class="from_2">
+            <p class="p_laststage"></p>
+
+            <div class="cnt_fro2">
+                <p class="txt_email_already_exists">This email already exists</p>
+                <input type="text" id="inp_email" placeholder="">
+                <label class="lbl__pas" for="inp_email">Enter an E-mail</label>
+            </div>
+            <div class="cnt_fro2">
+                <input type="text" id="inp_password" placeholder="">
+                <label class="lbl__pas" for="inp_password">Password</label>
+                <p class="btn_afficher"></p>
+            </div>
+            <button class="btn_submit" type="button">Submit</button>
+            <button class="btn_Back" type="button">Back</button>
+        </form>
+        <div class="svg_1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="678.62" height="606.19" viewBox="0 0 678.62 606.19"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path id="uuid-fb20b2b5-bc5b-4117-a1ee-c5d1a8aa62bd-414"
+                    d="m183.39,55.89c2.75-6.95,8.68-11.07,13.24-9.21,4.56,1.86,6.03,9.01,3.28,15.96-1.06,2.79-2.79,5.27-5.06,7.23l-12.04,29.28-14.07-6.29,13.36-28.2c-.3-3.01.14-6.02,1.28-8.78,0,0,0,0,0,0Z"
+                    fill="#a0616a" stroke-width="0" />
+                <path
+                    d="m132.94,242.82s-20.19-9.78-18.79-16.8c1.4-7.03,61.55-156.74,61.55-156.74l27.85,18.3-70.61,155.25Z"
+                    fill="#e6e6e6" stroke-width="0" />
+                <path
+                    d="m435.76,606.19h-193.12c-28.09,0-50.94-22.85-50.94-50.94V50.94c0-28.09,22.85-50.94,50.94-50.94h193.12c28.09,0,50.94,22.85,50.94,50.94v504.31c0,28.09-22.85,50.94-50.94,50.94Z"
+                    fill="#d7d7d8" stroke-width="0" />
+                <path
+                    d="m435.9,592.4h-193.4c-20.79,0-37.71-16.92-37.71-37.71V50.51c0-20.79,16.92-37.71,37.71-37.71h193.4c20.79,0,37.71,16.92,37.71,37.71v504.18c0,20.79-16.92,37.71-37.71,37.71Z"
+                    fill="#fff" stroke-width="0" />
+                <path
+                    d="m366.55,46.36h-54.69c-7.22,0-13.09-5.87-13.09-13.09s5.87-13.09,13.09-13.09h54.69c7.22,0,13.09,5.87,13.09,13.09s-5.87,13.09-13.09,13.09Z"
+                    fill="#d7d7d8" stroke-width="0" />
+                <rect x="232.82" y="201.79" width="212.77" height="29.95" rx="14.98" ry="14.98" fill="#6c63ff"
+                    stroke-width="0" />
+                <rect x="237.24" y="176.9" width="65.71" height="5.22" rx="2.61" ry="2.61" fill="#6c63ff"
+                    stroke-width="0" />
+                <rect x="232.82" y="303.18" width="212.77" height="29.95" rx="14.98" ry="14.98" fill="#d7d7d8"
+                    stroke-width="0" />
+                <rect x="237.24" y="278.28" width="65.71" height="5.22" rx="2.61" ry="2.61" fill="#d7d7d8"
+                    stroke-width="0" />
+                <rect x="232.82" y="404.56" width="212.77" height="29.95" rx="14.98" ry="14.98" fill="#d7d7d8"
+                    stroke-width="0" />
+                <rect x="237.24" y="379.67" width="65.71" height="5.22" rx="2.61" ry="2.61" fill="#d7d7d8"
+                    stroke-width="0" />
+                <path
+                    d="m537.95,123.4s-20.62,2.33-21.95,34.25c-1.11,26.6-3.37,41.43,7.45,46.98,3.87,1.98,8.42,2.16,12.55.8l44.18-14.53s.67-47.89-14.63-59.52c-15.3-11.64-27.6-7.98-27.6-7.98Z"
+                    fill="#2f2e41" stroke-width="0" />
+                <polygon points="562.31 196.78 539.95 204.13 539.95 171.95 560.23 171.95 562.31 196.78" fill="#ffb6b6"
+                    stroke-width="0" />
+                <path id="uuid-e639489a-d12b-4c23-97cb-2af79ea40b7d-415"
+                    d="m493.96,379.49c-1.21,7.37-6.13,12.66-10.98,11.81-4.85-.85-7.81-7.52-6.59-14.9.44-2.95,1.61-5.75,3.41-8.14l5.54-31.17,15.08,3.16-7.07,30.39c.93,2.88,1.14,5.91.61,8.85,0,0,0,0,0,0Z"
+                    fill="#ffb6b6" stroke-width="0" />
+                <path id="uuid-56df27a3-bbb6-4bd2-b7f5-888148e3fe66-416"
+                    d="m615.85,375.91c1.49,7.32-1.24,14.01-6.08,14.94-4.84.93-9.97-4.26-11.45-11.58-.63-2.92-.53-5.94.29-8.82l-5.89-31.11,15.22-2.41,4.19,30.92c1.89,2.36,3.16,5.12,3.72,8.06,0,0,0,0,0,0Z"
+                    fill="#ffb6b6" stroke-width="0" />
+                <rect x="532.96" y="557.07" width="20.94" height="29.71" fill="#ffb6b6" stroke-width="0" />
+                <path
+                    d="m512.57,604.77c-2.2,0-4.16-.05-5.64-.19-5.56-.51-10.87-4.62-13.54-7.02-1.2-1.08-1.58-2.8-.96-4.28h0c.45-1.06,1.34-1.86,2.45-2.17l14.7-4.2,23.8-16.06.27.48c.1.18,2.44,4.39,3.22,7.23.3,1.08.22,1.98-.23,2.68-.31.48-.75.76-1.1.92.43.45,1.78,1.37,5.94,2.03,6.07.96,7.35-5.33,7.4-5.59l.04-.21.18-.12c2.89-1.86,4.67-2.71,5.28-2.53.38.11,1.02.31,2.75,17.44.17.54,1.38,4.48.56,8.25-.89,4.1-18.81,2.69-22.4,2.37-.1.01-13.52.97-22.71.97Z"
+                    fill="#2f2e41" stroke-width="0" />
+                <rect x="602.03" y="537.03" width="20.94" height="29.71"
+                    transform="translate(-199.26 407.72) rotate(-31.95)" fill="#ffb6b6" stroke-width="0" />
+                <path
+                    d="m589.93,600.7c-2.46,0-4.72-.3-6.33-.58-1.58-.28-2.82-1.54-3.08-3.12h0c-.18-1.14.15-2.29.93-3.14l10.25-11.34,11.7-26.22.48.26c.18.1,4.39,2.43,6.56,4.43.83.76,1.24,1.57,1.22,2.4-.01.58-.23,1.04-.45,1.37.6.16,2.23.22,6.11-1.42,5.66-2.39,3.42-8.41,3.32-8.66l-.08-.2.09-.19c1.47-3.11,2.52-4.77,3.14-4.94.39-.11,1.03-.28,11.56,13.35.43.36,3.54,3.07,4.84,6.7,1.41,3.95-14.54,12.24-17.75,13.86-.1.08-16.79,12.21-23.65,15.66-2.72,1.37-5.94,1.79-8.87,1.79Z"
+                    fill="#2f2e41" stroke-width="0" />
+                <path
+                    d="m569.32,308.62h-58.63l-5.32,54.54,23.28,201.52h29.93l-11.97-116.39,48.55,105.08,26.6-18.62-37.91-98.1s13.54-85.46,2.9-106.75c-10.64-21.28-17.43-21.28-17.43-21.28Z"
+                    fill="#2f2e41" stroke-width="0" />
+                <polygon points="598.48 311.95 496.73 311.95 533.31 191.57 573.88 191.57 598.48 311.95" fill="#6c63ff"
+                    stroke-width="0" />
+                <path d="m539.71,191.59s-25.27-.67-27.93,5.99c-2.66,6.65-33.92,164.94-33.92,164.94h20.62l41.24-170.93Z"
+                    fill="#6c63ff" stroke-width="0" />
+                <path
+                    d="m556.15,191.73s22.26-2.82,24.92,3.83c2.66,6.65,33.92,164.94,33.92,164.94h-20.62s-38.22-168.77-38.22-168.77Z"
+                    fill="#6c63ff" stroke-width="0" />
+                <circle cx="542.72" cy="158.58" r="22.28" fill="#ffb6b6" stroke-width="0" />
+                <path d="m536.62,131.71s-12.26,49.79,1.37,73.06l-19.2-4.08s-7.44-54.49,7.52-64.4l10.31-4.59Z"
+                    fill="#2f2e41" stroke-width="0" />
+                <path
+                    d="m678.62,603.58c0,.83-.67,1.5-1.5,1.5H1.5c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5h675.62c.83,0,1.5.67,1.5,1.5Z"
+                    fill="#2e2e41" stroke-width="0" />
+                <polygon points="115.1 174.73 140.71 183.15 140.71 146.28 117.47 146.28 115.1 174.73" fill="#a0616a"
+                    stroke-width="0" />
+                <circle cx="137.54" cy="130.96" r="25.52" fill="#a0616a" stroke-width="0" />
+                <path
+                    d="m131.04,132.96l3.52,4.27,6.36-11.14s8.12.42,8.12-5.61,7.45-6.2,7.45-6.2c0,0,10.55-18.42-11.3-13.57,0,0-15.16-10.38-22.69-1.51,0,0-23.11,11.64-16.5,31.9l10.99,20.89,2.49-4.73s-1.51-19.85,11.56-14.32Z"
+                    fill="#2f2e41" stroke-width="0" />
+                <rect x="107.42" y="557.4" width="20.94" height="29.71"
+                    transform="translate(235.77 1144.5) rotate(-180)" fill="#a0616a" stroke-width="0" />
+                <path
+                    d="m126.04,604.12c-3.58.32-21.5,1.74-22.4-2.37-.82-3.77.39-7.71.56-8.25,1.72-17.14,2.36-17.33,2.75-17.44.61-.18,2.39.67,5.28,2.53l.18.12.04.21c.05.27,1.33,6.56,7.4,5.59,4.16-.66,5.51-1.58,5.94-2.03-.35-.16-.79-.44-1.1-.92-.45-.7-.53-1.6-.23-2.68.78-2.85,3.12-7.06,3.22-7.23l.27-.48,23.8,16.06,14.7,4.2c1.11.32,2,1.11,2.45,2.17h0c.62,1.48.24,3.2-.96,4.28-2.67,2.4-7.97,6.51-13.54,7.02-1.48.14-3.44.19-5.64.19-9.19,0-22.61-.95-22.71-.97Z"
+                    fill="#2f2e41" stroke-width="0" />
+                <path d="m155.1,301.25l-54.93-2.81s-8.42,31.92,2.22,65.18l1.28,200.29h31.04l29.26-206.61-8.87-56.05Z"
+                    fill="#2f2e41" stroke-width="0" />
+                <path
+                    d="m145.83,167.65l-30.15-16s-32.49,47.48-28,73.2c4.5,25.72,12.48,73.6,12.48,73.6l66.51,2.81-11.61-94.29-9.23-39.32Z"
+                    fill="#e6e6e6" stroke-width="0" />
+                <rect x="122.31" y="557.4" width="20.94" height="29.71"
+                    transform="translate(265.56 1144.5) rotate(-180)" fill="#a0616a" stroke-width="0" />
+                <path
+                    d="m140.94,604.12c-3.58.32-21.5,1.74-22.4-2.37-.82-3.77.39-7.71.56-8.25,1.72-17.14,2.36-17.33,2.75-17.44.61-.18,2.39.67,5.28,2.53l.18.12.04.21c.05.27,1.33,6.56,7.4,5.59,4.16-.66,5.51-1.58,5.94-2.03-.35-.16-.79-.44-1.1-.92-.45-.7-.53-1.6-.23-2.68.78-2.85,3.12-7.06,3.22-7.23l.27-.48,23.8,16.06,14.7,4.2c1.11.32,2,1.11,2.45,2.17h0c.62,1.48.24,3.2-.96,4.28-2.67,2.4-7.97,6.51-13.54,7.02-1.48.14-3.44.19-5.64.19-9.19,0-22.61-.95-22.71-.97Z"
+                    fill="#2f2e41" stroke-width="0" />
+                <path d="m166.67,301.25l-66.51-2.81s-8.42,31.92,2.22,65.18l12.86,200.29h31.04l29.26-206.61-8.87-56.05Z"
+                    fill="#2f2e41" stroke-width="0" />
+                <path id="uuid-e3777ca2-fb97-40f5-b301-a7df89d05aed-417"
+                    d="m192.22,353.55c2.45,7.06.64,14.05-4.03,15.62-4.67,1.56-10.44-2.89-12.89-9.96-1.02-2.81-1.32-5.82-.88-8.78l-9.97-30.05,14.76-4.41,8.27,30.09c2.19,2.09,3.82,4.66,4.75,7.49,0,0,0,0,0,0Z"
+                    fill="#a0616a" stroke-width="0" />
+                <path
+                    d="m108.54,178.95s21.68-5.76,25.21.48c3.52,6.24,55.57,158.96,55.57,158.96l-33.04,4.3-47.73-163.74Z"
+                    fill="#e6e6e6" stroke-width="0" />
+            </svg>
+        </div>
+        <div class="dv_cntrie" value=""><img src="" alt="">
+            <p></p>
+            <h6></h6>
+        </div>
+    </main>
+
+
+    <script>
+        const my_from1 = document.querySelector(".my_from1");
+        my_from1.classList.add("display_f")
+        const my_from2 = document.querySelector(".from_2");
+
+        let inp_firstname = document.getElementById("inp_firstname");
+        let inp_lastname = document.getElementById("inp_lastname");
+        let inp_username = document.getElementById("inp_username");
+
+        let for_none = document.querySelector(".for_none");
+        let for_woman = document.querySelector(".for_woman");
+        let for_man = document.querySelector(".for_man");
+        [for_none, for_woman, for_man].forEach(
+            dv => {
+                dv.onclick = () => {
+                    [for_none, for_woman, for_man].forEach(a => a.classList.remove("add_colorGNDR"));
+                    dv.classList.add("add_colorGNDR")
+                }
+            }
+        )
+
+
+        let inp_adress = document.getElementById("inp_adress");
+        let inp_phone = document.getElementById("inp_phone");
+        let day_inp = document.getElementById("day_inp");
+        let year_inp = document.getElementById("year_inp");
+        let month_inp = document.getElementById("month_inp");
+        var l_n = /[0-9]/;
+        [month_inp, year_inp, day_inp].forEach(inp => {
+            inp.onkeydown = (ky) => {
+                if (!ky.key.match(l_n) && ky.key != "Backspace") {
+                    ky.preventDefault()
+                }
+            }
+        })
+        inp_adress.onkeyup = (k) => {
+            if (k.key == " ") {
+                k.preventDefault()
+                inp_adress.value = inp_adress.value + '-';
+            }
+            inp_adress.value = inp_adress.value.toUpperCase()
+        }
+
+        day_inp.onkeyup = (k) => {
+            if (day_inp.value > 31) {
+                day_inp.classList.add("atert_inp")
+            }
+            else
+                day_inp.classList.remove("atert_inp")
+        }
+
+        month_inp.onkeyup = (k) => {
+            if (month_inp.value > 12) {
+                month_inp.classList.add("atert_inp")
+            } else
+                month_inp.classList.remove("atert_inp")
+        }
+
+        const d = new Date();
+
+        year_inp.onkeyup = (k) => {
+            if (year_inp.value > d.getFullYear()) {
+                year_inp.classList.add("atert_inp")
+            } else
+                year_inp.classList.remove("atert_inp")
+        }
+
+        inp_phone.onkeydown = (ky) => {
+            if (!ky.key.match(l_n) && ky.key != "Backspace") {
+                ky.preventDefault()
+            }
+        }
+
+
+
+        let list_num = document.querySelector(".list_num");
+
+        let cnt_serachnum = document.querySelector(".cnt_serachnum");
+        let btn_open_menu_contie = document.querySelector(".btn_open_menu_contie");
+        let sel_number = document.getElementById("sel_number");
+        btn_open_menu_contie.addEventListener("click", () => {
+            cnt_serachnum.classList.add("display_f");
+
+            window.onclick = (e) => {
+                if (!cnt_serachnum.contains(e.target) && !btn_open_menu_contie.contains(e.target)) {
+                    cnt_serachnum.classList.remove("display_f");
+                }
+            }
+        })
+        var mayarr12 = [];
+        $.post('flags.json').done(res => {
+            for (var i of res) {
+                mayarr12.push(i);
+                for (n of res) n.name = n.name.toUpperCase();
+
+                var cloned_op = document.querySelector(".dv_cntrie").cloneNode(true);
+                cloned_op.querySelector("img").src = `https://country-code-au6g.vercel.app/${i.code}.svg`;
+                cloned_op.querySelector("p").innerHTML = `${i.name}  :`;
+                cloned_op.querySelector("h6").innerHTML = `  ${i.dial_code}`;
+                cloned_op.classList.add("display_f")
+                list_num.append(cloned_op)
+            }
+        })
+        setInterval(() => {
+            let options_cntrie = list_num.querySelectorAll(".dv_cntrie");
+            options_cntrie.forEach(dv => {
+                dv.onclick = () => {
+                    cnt_serachnum.classList.remove("display_f");
+                    sel_number.querySelector("p").innerHTML = dv.querySelector("h6").innerHTML;
+                    sel_number.querySelector(".flag_img").src = dv.querySelector("img").src
+                }
+            })
+        }, 1000);
+
+        let no_res_contr = document.querySelector(".no_res_contr");
+        let inp_ser_numb = document.querySelector("#inp_ser_numb");
+
+        inp_ser_numb.addEventListener("keyup", () => {
+            var found_items = [];
+            list_num.replaceChildren();
+            found_items = mayarr12.filter(word => word.name.includes(inp_ser_numb.value.toUpperCase()));
+            if (found_items.length > 0) {
+                no_res_contr.classList.remove('display_f')
+                for (item of found_items) {
+                    var cloned_op = document.querySelector(".dv_cntrie").cloneNode(true);
+                    cloned_op.querySelector("img").src = `https://country-code-au6g.vercel.app/${item.code}.svg`;
+                    cloned_op.querySelector("p").innerHTML = `${item.name} : `;
+                    cloned_op.querySelector("h6").innerHTML = `  ${item.dial_code}`;
+                    cloned_op.classList.add("display_f")
+                    list_num.append(cloned_op)
+
+                }
+            }
+            else {
+                no_res_contr.classList.add('display_f')
+            }
+
+
+        })
+
+
+        let all_inputs = [inp_adress, inp_phone, inp_firstname, inp_lastname, inp_username]
+        let all_inputs2 = [inp_adress, inp_phone, inp_firstname, inp_lastname, inp_username, year_inp, month_inp, day_inp]
+
+        all_inputs.forEach(input => {
+            input.onblur = () => {
+                if (input.value == "") {
+                    input.classList.add("atert_inp")
+                }
+                else {
+                    input.classList.remove("atert_inp")
+
+                }
+            }
+            input.addEventListener("keyup", () => {
+                input.classList.remove("atert_inp")
+
+            })
+        })
+
+
+        // from 2 script here
+
+        let btn_afficher = document.querySelector('.btn_afficher');
+        let inp_password = document.querySelector('#inp_password');
+        let inp_email = document.querySelector('#inp_email');
+        let txt_email_already_exists= document.querySelector('.txt_email_already_exists');
+        let p_laststage = document.querySelector('.p_laststage');
+        let submit_1 = document.querySelector('.submit_1');
+        let btn_Back = document.querySelector('.btn_Back');
+        let btn_submit = document.querySelector('.btn_submit');
+        submit_1.addEventListener('click', () => {
+            var y = 0;
+            for (val of all_inputs2) {
+                if (val.value == "" && val != inp_ser_numb) {
+                    val.classList.add('atert_inp')
+                    y++;
+                }
+            }
+
+            let atert_inp = document.querySelectorAll(".atert_inp")
+            let select = document.querySelectorAll(".add_colorGNDR")
+            if (y == 0 && select.length == 1 && atert_inp.length < 1) {
+                my_from1.classList.add("ani_my_from1");
+                setTimeout(() => {
+                    my_from2.classList.add("display_f")
+                    my_from2.classList.add("ani_my_from2");
+                    my_from1.classList.remove("display_f")
+                }, 990)
+
+                p_laststage.innerHTML = `Well, M.r  ${inp_username.value} , all that remains for you is this stage. Make sure you enter correct information`
+            }
+        })
+
+
+        const RegExp1 = /([a-zA-Z][0-9]|[a-zA-Z])*\@[a-zA-Z]*\.[a-zA-Z]{2,6}/;
+
+        inp_email.onchange = () => {
+
+
+            if (!inp_email.value.match(RegExp1)) {
+                inp_email.classList.add("alertERR");
+            }
+            else {
+                $(document).ready(
+                    () => {
+                        $.post(
+                            "check_email.php", {
+                            email_text: inp_email.value
+                        }
+                        ).done(
+                            res => {
+                                if (res == 'NOT_EXISTS') {
+                                    txt_email_already_exists.classList.remove("display_f")
+                                    inp_email.classList.remove("alertERR");
+
+                                } else {
+                                    txt_email_already_exists.classList.add("display_f")
+                                    inp_email.classList.add("alertERR");
+                                }
+                            }
+                        )
+                    }
+                )
+            }
+
+
+        }
+        let elegal_chr = [' ', '!', '#', '$', '%', '^', '&', '*', '+', '=', '/', '\\', ',', ';', ':', '<', '>', '?', '[', ']', '{', '}', '|', '~', '`'];
+        inp_email.onkeydown = (e) => {
+            if (elegal_chr.includes(e.key)) {
+                e.preventDefault();
+            }
+            if (!isNaN(parseInt(e.key) && isFinite(e.key)) && inp_email.value == '') {
+                e.preventDefault();
+            }
+
+            console.log('sadf');
+
+        }
+
+
+
+
+
+
+        inp_password.type = "password";
+        inp_password.onkeyup = () => {
+            btn_afficher.innerHTML = "Show";
+        }
+
+        inp_password.onblur = () => {
+            if (inp_password.value != '') {
+                inp_password.type = "password";
+                btn_afficher.innerHTML = "Show";
+            }
+            else
+                btn_afficher.innerHTML = "";
+        }
+        btn_Back.addEventListener("click", () => {
+            my_from1.classList.remove("ani_my_from1");
+            my_from2.classList.remove("display_f")
+            my_from2.classList.remove("ani_my_from2");
+            my_from1.classList.add("display_f")
+
+        })
+
+        btn_afficher.addEventListener("click", () => {
+            if (btn_afficher.innerHTML == "Show") {
+                inp_password.type = "text";
+                btn_afficher.innerHTML = "Hide"
+            }
+            else {
+                inp_password.type = "password";
+                btn_afficher.innerHTML = "Show"
+            }
+        })
+        btn_submit.addEventListener('click', () => {
+            let arrer2 = my_from2.querySelectorAll(".alertERR")
+            if (arrer2.length == 0 && inp_password.value != '' && !txt_email_already_exists.classList.contains("display_f")) {
+                $(document).ready(
+                    function () {
+                        let all_inputs2 = [inp_adress, inp_phone, inp_firstname, inp_lastname, inp_username, year_inp, month_inp, day_inp]
+                        var b_d = `${year_inp.value}-${month_inp.value}-${day_inp.value}`;
+                        var phone = `${sel_number.querySelector("p").innerHTML}${inp_phone.value}`;
+                        var gender = document.querySelector(".add_colorGNDR").querySelector("p").innerHTML;
+
+                        $.post('create_ac.php', {
+                            f_name: $(inp_firstname).val(),
+                            l_name: $(inp_lastname).val(),
+                            user_name: $(inp_username).val(),
+                            B_D: b_d,
+                            gender: gender,
+                            phone: phone,
+                            adress: $(inp_adress).val(),
+                            email: $(inp_email).val(),
+                            password: $(inp_password).val()
+                        }).done(
+                            function (data) {
+                                scsses = data[0]
+                                console
+                                    .log(scsses)
+                                if (scsses) {
+                                    let host_name = window.location.origin;
+                                    var newURL = host_name + "/SETWEB_project/pg_login.html";
+                                    window.location.href = newURL;
+                                }
+
+
+                            }
+                        )
+                    }
+                )
+            }
+        })
+
+
+
+    </script>
+</body>
+
+</html>

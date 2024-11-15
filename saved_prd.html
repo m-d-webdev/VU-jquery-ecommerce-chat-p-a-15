@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+        </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Teachers", sans-serif;
+            font-size: 14px;
+        }
+
+        .main_page {
+            position: fixed;
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 97%;
+        }
+
+        .menu {
+            width: 12%;
+            padding: 5px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cnt_choosed_typr img {
+            width: 15px;
+            margin-right: 6px;
+        }
+
+        .cnt_choosed_typr p {
+            font-size: 14px;
+
+        }
+
+        .cnt_choosed_typr {
+            width: 95%;
+            border: solid 1px rgba(0, 0, 0, 0.336);
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            cursor: pointer;
+            padding: 3px 8px;
+            border-radius: 6px;
+        }
+
+
+        .order_by_dv img {
+            width: 15px;
+            margin-right: 6px;
+        }
+
+        .order_by_dv p {
+            font-size: 15px;
+
+        }
+
+        .order_by_dv {
+            margin-top: 15px;
+            width: 95%;
+            border: solid 1px rgba(0, 0, 0, 0.336);
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            cursor: pointer;
+            padding: 3px 8px;
+            border-radius: 6px;
+        }
+
+
+
+
+        .list_btn {
+            position: fixed;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            background-color: #fff;
+            z-index: 2;
+            padding: 8px 8px 8px 20px;
+            width: 15%;
+            left: 10px;
+            animation: ani_list_btn .4s alternate;
+            border-radius: 10px;
+            filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.618));
+            display: none;
+        }
+
+        @keyframes ani_list_btn {
+            0% {
+                left: -800px;
+            }
+        }
+
+        .list_btn button:hover {
+            border: solid 1px rgba(0, 0, 0, 0.307);
+        }
+
+        .list_btn button {
+            margin: 3px 0;
+            border-radius: 5px;
+            padding: 6px;
+            background-color: #fff;
+            border: solid 1px transparent;
+            text-align: start;
+            width: 100%;
+        }
+
+        .list_orde button:hover {
+            border: solid 1px rgba(0, 0, 0, 0.307);
+
+        }
+
+        .list_orde button {
+            margin: 3px 0;
+            border-radius: 5px;
+            padding: 6px;
+            background-color: #fff;
+            border: solid 1px transparent;
+            text-align: start;
+            width: 100%;
+        }
+
+        .list_orde {
+            position: fixed;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            background-color: #fff;
+            z-index: 2;
+            padding: 8px 8px 8px 20px;
+            width: 15%;
+            left: 10px;
+            top: 50px;
+            animation: ani_list_btn .4s alternate;
+            border-radius: 10px;
+            filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.618));
+            display: none;
+        }
+
+
+        .main_prd::-webkit-scrollbar-thumb {
+            background-color: rgb(9, 42, 255);
+        }
+
+        .main_prd::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .main_prd {
+            width: 85%;
+            height: 97%;
+            padding-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            justify-content: center;
+            align-items: flex-start;
+            overflow: auto;
+            border-radius: 10px;
+            border: solid 1px rgba(0, 0, 0, 0.193);
+        }
+
+
+        .search_svd img {
+            width: 20px;
+            margin-right: 8px;
+        }
+
+        .search_svd input {
+            width: 300px;
+            outline: none;
+            padding: 3px 6px;
+            border-radius: 5px;
+            border: solid 1px rgba(0, 0, 0, 0.5);
+        }
+
+        .search_svd {
+            position: absolute;
+            left: 8px;
+            top: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cnt_product {
+            width: 240px;
+            height: 350px;
+            margin: 3px;
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            border: solid 1px rgba(0, 0, 0, 0.168);
+            background-color: #fff;
+            padding: 5px;
+            border-radius: 10px;
+            position: relative;
+            flex-basis: 100;
+            transition: .4s;
+            display: none;
+        }
+
+
+        .cnt_product span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .cnt_product span img {
+            width: 15px;
+            margin-right: 7px;
+        }
+
+        .descriptionTEXT {
+            margin: 5px;
+            font-size: 11px;
+            font-weight: 600;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+        }
+
+        .cntIMGPRODECT {
+            width: 100%;
+            overflow: hidden;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cntIMGPRODECT img {
+            transition: .3s;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .cntIMGPRODECT img:hover {
+            transform: scale(1.2);
+        }
+
+        .btn_more {
+            width: 100%;
+            background-color: rgb(0, 0, 0);
+            border: none;
+            padding: 3px;
+            font-size: 12px;
+            color: #fff;
+            font-weight: 400;
+        }
+
+        .btn_more:hover {
+            background-color: rgba(0, 67, 54, 0.726);
+        }
+
+        .price {
+            font-weight: 900;
+            font-size: 14px;
+        }
+
+        .adress {
+            opacity: .7;
+            font-weight: 600;
+            color: black;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .date_save {
+            position: absolute;
+            bottom: -15px;
+            font-size: 11px;
+
+        }
+
+        .no_resitl_dv svg {
+            width: 100%;
+        }
+
+        .no_resitl_dv p {
+            position: absolute;
+            top: -50px;
+            font-size: 25px;
+        }
+
+        .no_resitl_dv {
+            width: 60%;
+            height: 400px;
+            position: absolute;
+            top: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+
+        @media screen and (max-width : 500px) {
+
+            .main_page {
+                position: fixed;
+                width: 100%;
+                padding: 0px;
+                padding-top: 50px;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                height: 97%;
+                /* display: none; */
+            }
+
+            .menu {
+                width: 100%;
+                position: absolute;
+                padding: 5px;
+                top: 0px;
+                height: auto;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            .main_prd {
+                padding-top: 40px;
+                width: 100%;
+            }
+
+            .cnt_product {
+                width: 180px;
+                height: 320px;
+                margin: 3px;
+                margin-bottom: 25px;
+            }
+
+            .cnt_choosed_typr {
+                width: 45%;
+                border: solid 1px rgba(0, 0, 0, 0.336);
+                position: relative;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                cursor: pointer;
+                padding: 3px 8px;
+                border-radius: 6px;
+            }
+
+
+
+            .order_by_dv {
+                margin-top: 0px;
+                width: 45%;
+                border: solid 1px rgba(0, 0, 0, 0.336);
+                position: relative;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                cursor: pointer;
+                padding: 3px 8px;
+                border-radius: 6px;
+            }
+
+
+
+
+            .list_btn {
+                width: 40%;
+                top: 0;
+                left: 10px;
+
+            }
+
+
+
+            .list_orde {
+                width: 40%;
+                left: 50%;
+                top: 40px;
+                animation: ani_list_btn .4s alternate;
+            }
+
+
+
+        }
+
+
+
+        .display {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cnt_product">
+        <p class="descriptionTEXT"></p>
+        <div class="cntIMGPRODECT">
+            <img src="img2.jpg" alt="">
+        </div>
+        <span>
+            <img src="img/price-tag.png" alt="">
+            <p class="price"></p>
+        </span>
+        <span>
+            <img src="img/pin.png" alt="">
+            <a target="_blank" href="" class="adress"></a>
+        </span>
+        <button class="btn_more">See Detail</button>
+        <p class="date_save"></p>
+    </div>
+    <main class="main_page">
+        <div class="menu">
+            <div class="list_btn">
+                <button class="btn_all_svd">All</button>
+                <button class="btn_op">Phones</button>
+                <button class="btn_op">watches</button>
+                <button class="btn_op">headphones</button>
+                <button class="btn_op">Computers</button>
+                <button class="btn_op">Computer attachments</button>
+                <button class="btn_op">Screens</button>
+                <button class="btn_op">clothes </button>
+                <button class="btn_op">Women's Clothing</button>
+                <button class="btn_op">pants</button>
+                <button class="btn_op">Short pants</button>
+                <button class="btn_op">shoes</button>
+                <button class="btn_op">slippers</button>
+                <button class="btn_op">women bags</button>
+                <button class="btn_op">bags</button>
+                <button class="btn_op">glasses</button>
+                <button class="btn_op">Hats</button>
+
+            </div>
+
+            <div class="cnt_choosed_typr">
+                <img src="img2/list-text (1).png" alt="">
+                <p class="html_type"></p>
+            </div>
+
+            <div class="order_by_dv">
+                <img src="img2/sort.png" alt="">
+                <p class="inn_ordr"> </p>
+            </div>
+
+            <div class="list_orde">
+                <button>News to Oldest</button>
+                <button>Oldest to News</button>
+            </div>
+
+        </div>
+
+        <div class="main_prd">
+            <div class="search_svd">
+                <img src="img2/search.png" alt="">
+                <input type="search" placeholder="Search" id="inp_ser_svd">
+            </div>
+            <div class="no_resitl_dv">
+                <p>No item is saved</p>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="934.98"
+                    height="571.14" viewBox="0 0 934.98 571.14">
+                    <path
+                        d="m733.52,89.21s-20.58,2.32-21.91,34.19c-1.11,26.56-3.37,41.36,7.44,46.9,3.86,1.98,8.4,2.15,12.53.8l44.1-14.5s.66-47.8-14.61-59.42-27.55-7.97-27.55-7.97h0Z"
+                        fill="#36344e" stroke-width="0" />
+                    <polygon points="757.83 162.46 735.51 169.8 735.51 137.67 755.76 137.67 757.83 162.46"
+                        fill="#faafb2" stroke-width="0" />
+                    <path id="uuid-ea0a1472-32fb-4242-948a-de51795c4bd3-46-44-46-72-78-43-43-46-48"
+                        d="m689.6,344.84c-1.21,7.36-6.12,12.64-10.96,11.79-4.85-.85-7.79-7.51-6.58-14.87.44-2.95,1.61-5.74,3.4-8.13l5.53-31.12,15.05,3.15-7.05,30.34c.93,2.87,1.14,5.9.61,8.84h0Z"
+                        fill="#faafb2" stroke-width="0" />
+                    <polygon points="740.7 551.77 719.8 551.77 707.67 440.07 739.99 440.07 740.7 551.77" fill="#faafb2"
+                        stroke-width="0" />
+                    <path
+                        d="m699.44,569.72c-2.2,0-4.16-.05-5.63-.19-5.55-.51-10.85-4.61-13.51-7-1.19-1.07-1.58-2.79-.96-4.27h0c.45-1.06,1.34-1.85,2.45-2.17l14.67-4.19,23.76-16.03.27.48c.1.18,2.43,4.38,3.21,7.22.3,1.08.22,1.98-.23,2.68-.31.48-.75.76-1.1.92.43.45,1.78,1.36,5.93,2.02,6.07.96,7.33-5.32,7.39-5.58l.04-.21.18-.12c2.88-1.86,4.66-2.7,5.27-2.52.38.11,1.02.31,2.74,17.41.17.54,1.38,4.47.56,8.24-.89,4.1-18.78,2.69-22.36,2.36-.1.01-13.49.96-22.67.96h-.01Z"
+                        fill="#36344e" stroke-width="0" />
+                    <polygon points="787.93 551.77 767.02 551.77 754.9 440.07 787.21 440.07 787.93 551.77"
+                        fill="#faafb2" stroke-width="0" />
+                    <path
+                        d="m746.67,569.72c-2.2,0-4.16-.05-5.63-.19-5.55-.51-10.85-4.61-13.51-7-1.19-1.07-1.58-2.79-.96-4.27h0c.45-1.06,1.34-1.85,2.45-2.17l14.67-4.19,23.76-16.03.27.48c.1.18,2.43,4.38,3.21,7.22.3,1.08.22,1.98-.23,2.68-.31.48-.75.76-1.1.92.43.45,1.78,1.36,5.93,2.02,6.07.96,7.33-5.32,7.39-5.58l.04-.21.18-.12c2.89-1.86,4.66-2.7,5.27-2.52.38.11,1.02.31,2.74,17.41.17.54,1.38,4.47.56,8.24-.89,4.1-18.78,2.69-22.36,2.36-.1.01-13.49.96-22.67.96h-.01Z"
+                        fill="#36344e" stroke-width="0" />
+                    <polygon points="793.94 277.42 692.37 277.42 728.88 157.26 769.38 157.26 793.94 277.42"
+                        fill="#dfdfe0" stroke-width="0" />
+                    <path d="m735.27,157.27s-25.23-.66-27.88,5.98-33.86,164.65-33.86,164.65h20.58l41.16-170.62h0Z"
+                        fill="#dfdfe0" stroke-width="0" />
+                    <circle cx="738.27" cy="124.32" r="22.24" fill="#faafb2" stroke-width="0" />
+                    <path
+                        d="m732.19,97.51s-12.24,49.7,1.37,72.93l-19.17-4.07s-7.43-54.39,7.51-64.28c0,0,10.29-4.58,10.29-4.58Z"
+                        fill="#36344e" stroke-width="0" />
+                    <path
+                        d="m772.83,277.42h-66.66l-36.47,149.69c-.67,6.32,3.34,12.22,9.48,13.87,20.01,5.36,68.03,12.95,140.7-8.2,6.99-2.03,10.96-9.41,8.77-16.36l-55.82-139h0Z"
+                        fill="#36344e" stroke-width="0" />
+                    <path
+                        d="m745.88,157.26l20.73-.91c8.98.68,17.1,5.56,21.91,13.17,14.65,23.16,42.06,71.97,17.59,78.66-32.26,8.81-47.89-40.24-47.89-40.24l-12.34-50.68h0Z"
+                        fill="#dfdfe0" stroke-width="0" />
+                    <path id="uuid-298a271f-a3d1-4ea5-9ac1-ac2853dfa275-47-45-47-73-79-44-44-47-49"
+                        d="m738.77,171.8c-4.26-6.12-4.41-13.33-.35-16.1,4.07-2.77,10.82-.04,15.08,6.08,1.74,2.42,2.84,5.24,3.22,8.2l17.71,26.18-12.99,8.23-16.08-26.68c-2.67-1.41-4.93-3.44-6.59-5.91h0Z"
+                        fill="#faafb2" stroke-width="0" />
+                    <polygon points="749.25 192.97 763.88 179.51 792.81 206.44 765.91 224.83 749.25 192.97"
+                        fill="#dfdfe0" stroke-width="0" />
+                    <path
+                        d="m32.41,126.63h459.26c17.9,0,32.41,14.51,32.41,32.41h0c0,17.9-14.51,32.41-32.41,32.41H32.41c-17.9,0-32.41-14.51-32.41-32.41h0c0-17.9,14.51-32.41,32.41-32.41Z"
+                        fill="#6c63ff" stroke-width="0" />
+                    <path
+                        d="m203.31,569.95c0,.66.53,1.19,1.19,1.19h729.29c.66,0,1.19-.53,1.19-1.19s-.53-1.19-1.19-1.19H204.5c-.66,0-1.19.53-1.19,1.19Z"
+                        fill="#484565" stroke-width="0" />
+                    <path
+                        d="m424.62,93.95h95.35c2.28,0,4.12,1.84,4.12,4.11h0c0,2.27-1.84,4.11-4.12,4.11h-95.35c-2.28,0-4.12-1.84-4.12-4.11h0c0-2.27,1.84-4.11,4.12-4.11Z"
+                        fill="#dfdfe0" stroke-width="0" />
+                    <path
+                        d="m4.12,0h95.35c2.28,0,4.12,1.84,4.12,4.11h0c0,2.27-1.84,4.11-4.12,4.11H4.12C1.84,8.23,0,6.39,0,4.11h0C0,1.84,1.84,0,4.12,0Z"
+                        fill="#dfdfe0" stroke-width="0" />
+                    <path
+                        d="m4.12,35.91h279.87c2.28,0,4.12,1.84,4.12,4.12h0c0,2.27-1.84,4.11-4.12,4.11H4.12c-2.28,0-4.12-1.84-4.12-4.11h0c0-2.27,1.84-4.12,4.12-4.12Z"
+                        fill="#dfdfe0" stroke-width="0" />
+                    <path
+                        d="m233.77,260.88c0,21.56,17.48,39.04,39.04,39.04,6.53,0,12.68-1.6,18.08-4.43l37.83,60c2.32,3.67,7.27,4.59,10.75,1.99h0c3.25-2.43,3.95-7.01,1.58-10.31l-41.61-57.75c7.63-7.13,12.41-17.28,12.41-28.54,0-21.56-17.48-39.04-39.04-39.04s-39.04,17.48-39.04,39.04Zm5.36,0c0-18.6,15.08-33.69,33.69-33.69s33.69,15.08,33.69,33.69c0,18.6-15.08,33.69-33.69,33.69-18.6,0-33.69-15.08-33.69-33.69Z"
+                        fill="#484662" stroke-width="0" />
+                </svg>
+            </div>
+        </div>
+
+    </main>
+    <script>
+
+        let list_btn = document.querySelector(".list_btn");
+        let btns_type = document.querySelectorAll(".list_btn button");
+        var arr_btn_type = Array.from(btns_type)
+        let cnt_choosed_typr = document.querySelector(".cnt_choosed_typr");
+        let html_type = document.querySelector(".html_type");
+        cnt_choosed_typr.addEventListener("click", () => {
+            list_btn.classList.add("display");
+            window.onclick = (e) => {
+                if (!list_btn.contains(e.target) && !cnt_choosed_typr.contains(e.target)) {
+                    list_btn.classList.remove("display");
+
+                }
+            }
+        })
+
+        var id_usere;
+
+        function fetch_url() {
+            urL = window.location.search;
+            url2 = urL.substring(urL.indexOf("=") + 1);
+            ur3 = decodeURIComponent(url2);
+            id_usere = JSON.parse(ur3);
+        }
+
+        window.onload = () => {
+            fetch_url();
+            setTimeout(() => {
+                btns_type[0].click();
+            }, 500)
+            btns_order[0].click();
+        }
+
+        btns_type.forEach(btn => {
+            btn.onclick = () => {
+
+                list_btn.classList.remove("display");
+                html_type.innerHTML = btn.innerHTML;
+                var key = arr_btn_type.indexOf(btn)
+                console.log(key)
+                switch (key) {
+                    case 0:
+                        // pg_auther[0].replaceChildren();
+                        load_saved_prd("all");
+                        // pg_auther[0].classList.add('display_pg');
+                        break;
+                    case 1:
+                        // pg_auther[0].replaceChildren();
+                        load_saved_prd("phone");
+                        // pg_auther[0].classList.add('display_pg');
+                        break;
+
+                    case 2:
+                        // pg_auther[1].replaceChildren();
+                        load_saved_prd('watche');
+                        // pg_auther[1].classList.add('display_pg');
+                        break;
+
+                    case 3:
+                        // pg_auther[2].replaceChildren();
+                        load_saved_prd('headphone');
+                        // pg_auther[2].classList.add('display_pg');
+                        break;
+
+                    case 4:
+                        // pg_auther[3].replaceChildren();
+                        load_saved_prd('computer');
+                        // pg_auther[3].classList.add('display_pg');
+                        break;
+
+                    case 5:
+                        // pg_auther[4].replaceChildren();
+                        load_saved_prd('c_attachment');
+                        // pg_auther[4].classList.add('display_pg');
+                        break;
+
+                    case 6:
+                        // pg_auther[5].replaceChildren();
+                        load_saved_prd('screen');
+                        // pg_auther[5].classList.add('display_pg');
+                        break;
+
+                    case 7:
+                        // pg_auther[6].replaceChildren();
+                        load_saved_prd('clothe');
+                        // pg_auther[6].classList.add('display_pg');
+
+                        break;
+                    case 8:
+                        // pg_auther[7].replaceChildren();
+                        load_saved_prd('w_clothing');
+                        // pg_auther[7].classList.add('display_pg');
+
+                        break;
+
+                    case 9:
+                        // pg_auther[8].replaceChildren();
+                        load_saved_prd('pant');
+                        // pg_auther[8].classList.add('display_pg');
+                        break;
+
+                    case 10:
+                        // pg_auther[9].replaceChildren();
+                        load_saved_prd('s_pant');
+                        // pg_auther[9].classList.add('display_pg');
+                        break;
+
+                    case 11:
+                        // pg_auther[10].replaceChildren();
+                        load_saved_prd('shoe');
+                        // pg_auther[10].classList.add('display_pg');
+                        break;
+
+                    case 12:
+                        // pg_auther[11].replaceChildren();
+                        load_saved_prd('slipper');
+                        // pg_auther[11].classList.add('display_pg');
+                        break;
+
+                    case 13:
+                        // pg_auther[12].replaceChildren();
+                        load_saved_prd('w_bag');
+                        // pg_auther[12].classList.add('display_pg');
+                        break;
+
+                    case 14:
+                        // pg_auther[13].replaceChildren();
+                        load_saved_prd('bag');
+                        // pg_auther[13].classList.add('display_pg');
+                        break;
+
+                    case 15:
+                        // pg_auther[14].replaceChildren();/
+                        load_saved_prd('glasse');
+                        // pg_auther[14].classList.add('display_pg');
+                        break;
+
+                    case 16:
+                        // pg_auther[15].replaceChildren();
+                        load_saved_prd('Hat');
+                        // pg_auther[15].classList.add('display_pg');
+                        break;
+
+
+                }
+            }
+
+        });
+
+
+        let list_orde = document.querySelector(".list_orde");
+        let btns_order = document.querySelectorAll(".list_orde button");
+        let inn_ordr = document.querySelector(".inn_ordr");
+        let order_by_dv = document.querySelector(".order_by_dv");
+
+
+
+
+
+        order_by_dv.addEventListener("click", () => {
+            list_orde.classList.add("display");
+            window.onclick = (e) => {
+                if (!list_orde.contains(e.target) && !order_by_dv.contains(e.target)) {
+                    list_orde.classList.remove("display");
+                }
+            }
+        })
+        let order;
+
+        btns_order.forEach(btn2 => {
+            btn2.onclick = () => {
+                list_orde.classList.remove("display");
+                inn_ordr.innerHTML = btn2.innerHTML;
+                if (btn2 == btns_order[0]) {
+                    order = 'n_l';
+                }
+                else {
+                    order = 'l_n';
+                }
+
+                load_saved_prd(type_2);
+
+            }
+
+        });
+
+
+
+
+        let no_resitl_dv = document.querySelector(".no_resitl_dv");
+        let cnt_product = document.querySelector(".cnt_product");
+        let main_prd = document.querySelector(".main_prd");
+        var type_2 = '';
+        function load_saved_prd(typer) {
+            no_resitl_dv.classList.remove("display");
+            type_2 = typer;
+            let produts_active = main_prd.querySelectorAll('.cnt_product');
+            produts_active.forEach(cnt => cnt.remove())
+            $(document).ready(
+                function () {
+                    $.post(
+                        "load_saved.php", {
+                        type: typer,
+                        orderd: order,
+                        id_user: id_usere
+                    }
+                    ).done(
+                        res => {
+                            res = JSON.parse(res);
+                            if (res.length == 0) {
+                                no_resitl_dv.classList.add("display");
+
+                            } else
+                                for (i of res) {
+                                    var cloned_product = cnt_product.cloneNode(true);
+                                    cloned_product.querySelector(".descriptionTEXT").innerHTML = i['description'];
+                                    cloned_product.querySelector(".cntIMGPRODECT img").src = i['des_img'];
+                                    cloned_product.querySelector(".price").innerHTML = i['price'] + ' $ ';
+                                    cloned_product.querySelector(".adress").innerHTML = i['local_product'];
+                                    cloned_product.querySelector(".date_save").innerHTML = "Save at :" + i['data_save'];
+                                    cloned_product.id = i['id_product'];
+                                    cloned_product.classList.add('display')
+                                    main_prd.appendChild(cloned_product);
+                                }
+                        }
+                    )
+
+                }
+            )
+
+        }
+
+        setInterval(more_dtF, 1000)
+        function more_dtF() {
+            btn_more = document.querySelectorAll(".btn_more");
+            btn_more.forEach(
+                (btn) => {
+                    btn.onclick = () => {
+                        let id_prod = btn.parentElement.getAttribute("id");
+                        ids = [id_prod, id_usere];
+                        ids = JSON.stringify(ids)
+                        ids = encodeURIComponent(ids);
+                        let host_name = window.location.origin;
+                        let uRl = host_name + "/SETWEB_project/mg_mr_ab_prd.html?ids=" + ids;
+                        window.location.href = uRl;
+                    }
+                }
+            )
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+        </script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_pg_mer_det.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="cnt_img1">
+        <img src="" alt="">
+    </div>
+    <div class="cnt_product">
+        <p class="descriptionTEXT"></p>
+        <div class="cntIMGPRODECT">
+            <img src="" alt="">
+        </div>
+        <span>
+            <img src="img/price-tag.png" alt="">
+            <p class="price"></p>
+        </span>
+        <span>
+            <img src="img/pin.png" alt="">
+            <a target="_blank" href="" class="adress"></a>
+        </span>
+        <button class="btn_more">See Detail</button>
+    </div>
+    <div class="bare_menu">
+        <div class="logo_page">
+            <p class="txt_logo">Kratrit</p>
+        </div>
+    </div>
+    <main class="main_pg">
+        <button class="save_prd">Save</button>
+        <div class="cnt_imgs_prd">
+            <main class="slider_img">
+
+            </main>
+        </div>
+        <div class="cnt_info_product">
+            <p class="type_prd">clothe</p>
+            <h4 class="name_prd"></h4>
+            <div class="cnt_sescr_prd">
+
+            </div>
+
+            <div class="cnt_other_info">
+                <span>
+                    <img src="img2/price-tag.png" alt="">
+                    <p class="price_2">00$</p>
+                </span>
+                <span>
+                    <img src="img2/box.png" alt="">
+                    <p class="etat"></p>
+                </span>
+                <span>
+                    <img src="img2/check (1).png" alt="">
+                    <p class="available_txt"></p>
+                </span>
+                <span>
+                    <img src="img2/location.png" alt="">
+                    <a href="#" class="locatisation"></a>
+                </span>
+                <span>
+                    <img src="img2/sleivryimg.png" alt="">
+                    <p class="loc_etat">delivry available</p>
+                </span>
+            </div>
+
+            <div class="info_reate_prd">
+                <span>
+                    <p class="inr_avg_rat"></p><img src="img3/star.png" alt="">
+                    <p class="totale_peopol_rat"></p>
+                </span>
+                <button class="btn_add_desc_rat">Add Comment</button>
+            </div>
+
+            <div class="seller_info">
+                <div class="dv_img_name_Seler">
+                    <div class="cnt_img_seller">
+                        <img class="seller_prf" src="" alt="">
+                    </div>
+                    <h5 class="seller_name"></h5>
+                </div>
+                <p class="title_setr">Seller</p>
+                <button class="btn_follow_seller"> <img src="img3/notification-bell (2).png" alt="">
+                    <p>Follow</p>
+                </button>
+            </div>
+            <div class="contact_seller">
+                <p>Contact seller</p>
+                <input type="text" name="" id="inp_msg_to_seller" placeholder="Message">
+                <button>Send</button>
+            </div>
+        </div>
+    </main>
+    <div class="cnt_btn_order">
+        <p class="alert_saved"> Saved successfully</p>
+
+        <button id="btn_order"> Bay now </button>
+        <button id="btn_add_tobasket"> <img class="img_ord" src="img3/add_to_basket.png" alt=""> add to Basket</button>
+    </div>
+    <div class="cnt_cend_msg">
+
+        <div class="confirm_order_div">
+            <p>Confirmation</p>
+            <div class="te_conf">
+                Send Order to <p class="h4"></p>
+                about <p class="h5"></p>
+            </div>
+            <div class="dv_ddf">
+                <button id="btn_cancel">Cancel</button>
+                <button id="bnt_sure">Sure</button>
+            </div>
+        </div>
+        <div class="popup_msg">
+            <img src="img2/checkout (1).png" alt="">
+            <div class="tex_order">The order was sent to <h4 class="seller_name"> </h4> successfully</div>
+            <button id="btn_finish">OK</button>
+        </div>
+    </div>
+    <main class="main_pg2"> </main>
+    <main class="main_zoom">
+
+    </main>
+    <main class="main_conf_add_to_basket">
+        <div class="popin_dv">
+            <p class="title_ad_basket">Add to Basket </p>
+            <div class="cnt_info_prd">
+                <div class="cnt_imgs_prd2">
+                    <img src="" alt="">
+                </div>
+
+                <div class="cnt_auther_info">
+                    <div class="div_info_name_price">
+
+                        <p class="name_prd_2"></p>
+                        <p class="price2"></p>
+                    </div>
+                    <div class="cnt_ch_quatity">
+                        <p class="tit_qu">Quantite</p>
+                        <div class="num_qu">
+                            <p id="quantite_num"></p>
+                            <div class="cnt_btns_ch">
+                                <button class="btn_add1"><img src="img3/up-arrow.png" alt="" srcset=""></button>
+                                <button class="btn_add2"><img src="img3/up-arrow (1).png" alt="" srcset=""></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chose_liv">
+                        <button class="btn_ueg_dlv">
+                            <p>Urgent delivery</p>
+                        </button>
+                        <!-- <label for="urgc_del"></label> -->
+                        <!-- <input type="checkbox" name="" id="urgc_del"> -->
+                    </div>
+                </div>
+            </div>
+            <div class="confirm_send">
+                <div>Totale price of this command : <p class="totale_price"></p> dolars</div>
+
+                <button id="btn_conf_add">Add</button>
+                <button id="btn_cancel_add">Cancel</button>
+            </div>
+        </div>
+    </main>
+
+
+    <div class="backgroundBlack_DV">
+        <div class="dv_add_star">
+            <div class="dv_write_desc">
+                <label for="in_desc_rating" class="lbl_inp_rating">Add a description about this product</label>
+                <div contenteditable="true" id="in_desc_rating"></div>
+            </div>
+            <div class="rating">
+                <label class="lbl_rating2"></label>
+                <label class="lbl_rating2"></label>
+                <label class="lbl_rating2"></label>
+                <label class="lbl_rating2"></label>
+                <label class="lbl_rating2"></label>
+            </div>
+            <button class="btn_send_ratin">Submit</button>
+        </div>
+    </div>
+
+    <script>
+        let id_prodect;
+        let prd_name;
+        let prd_descrition;
+        let prd_price;
+        let prd_etat;
+        let prd_available;
+        let prd_src_img;
+        let prd_adress;
+        let prd_type;
+        let seller_id;
+        let seller_full_name;
+        let seller_img;
+
+        document.querySelector(".logo_page").onclick = () => {
+            window.location.href = window.location.origin + "/SETWEB_project/page.html"
+        }
+
+        let save_prd = document.querySelector(".save_prd");
+        save_prd.addEventListener("click", () => {
+            $.post(
+                "fils_save_prd.php", {
+                id_product: id_prodect,
+                id_user: id_user
+            }
+            ).done(
+                res => {
+                    if (res == true) {
+                        document.querySelector(".alert_saved").innerHTML = " Saved successfully";
+                        document.querySelector(".alert_saved").classList.add("display");
+                        setTimeout(
+                            () => {
+                                document.querySelector(".alert_saved").classList.remove("display");
+                            }, 3000
+                        )
+                    }
+                }
+            )
+        })
+
+
+        const main_pg2 = document.querySelector(".main_pg2");
+        let cnt_imgs_prd = document.querySelector(".cnt_imgs_prd");
+        let slider_img = document.querySelector(".slider_img");
+        let cnt_img1 = document.querySelector(".cnt_img1");
+        cnt_img1.style.width = cnt_imgs_prd.offsetWidth + "px";
+        cnt_img1.style.height = cnt_imgs_prd.offsetHeight + "px";
+
+        let my_inter1;
+
+        let lrn_ims_sl = 0;
+
+
+        window.onload = () => {
+            load_prdect();
+
+
+        }
+
+        let data_prodect = [];
+
+
+
+
+        const cnt_product = document.querySelector(".cnt_product");
+
+        let etat = document.querySelector(".etat");
+        let price_2 = document.querySelector(".price_2");
+        let type_prd = document.querySelector(".type_prd");
+        let locatisation = document.querySelector(".locatisation");
+        let available_txt = document.querySelector(".available_txt");
+        let inr_avg_rat = document.querySelector(".inr_avg_rat");
+        let totale_peopol_rat = document.querySelector(".totale_peopol_rat");
+        let seller_info = document.querySelector(".seller_info");
+        let seller_name = document.querySelector(".seller_name");
+        let cnt_img_seller = document.querySelector(".cnt_img_seller");
+        let btn_follow_seller = document.querySelector(".btn_follow_seller");
+        let cnt_sescr_prd = document.querySelector(".cnt_sescr_prd");
+        let main_zoom = document.querySelector(".main_zoom");
+        // let id_seller;
+        var arr_img_prd;
+
+        btn_follow_seller.addEventListener("click", () => {
+            if (btn_follow_seller.classList.contains("followed_style")) {
+                $.post(
+                    'follow.php', {
+                    concept: 'cancel_follower',
+                    follower_id: id_user,
+                    costemer: seller_id,
+                }
+                ).done(
+                    res => {
+                        console.log(res)
+                        if (res == "canceled_follow") {
+                            btn_follow_seller.classList.remove('followed_style');
+                            btn_follow_seller.querySelector("img").src = 'img3/notification-bell (2).png'
+                            btn_follow_seller.querySelector("p").innerHTML = "Follow";
+                            var follower_followingIDS = localStorage.getItem('follower_followingIDS');
+                            follower_followingIDS = decodeURIComponent(follower_followingIDS);
+                            follower_followingIDS = JSON.parse(follower_followingIDS);
+                            try {
+                                follower_followingIDS.following.splice(follower_followingIDS.following.indexOf(seller_id), 1);
+                                console.log(follower_followingIDS)
+                                follower_following = JSON.stringify(follower_followingIDS);
+                                follower_following = encodeURIComponent(follower_following);
+                                localStorage.removeItem('follower_followingIDS');
+                                localStorage.setItem('follower_followingIDS', follower_following);
+                                check_following();
+                            } catch (error) {
+                                throw error;
+                            }
+                        }
+                    }
+                )
+            }
+            else {
+                $.post(
+                    'follow.php', {
+                    concept: 'add_follower',
+                    follower_id: id_user,
+                    costemer: seller_id,
+                }
+                ).done(
+                    res => {
+                        if (res == "added_follow") {
+                            btn_follow_seller.querySelector("img").src = 'img3/notification-bell.png'
+                            btn_follow_seller.querySelector("p").innerHTML = "Following";
+                            btn_follow_seller.classList.add('followed_style');
+                            var follower_followingIDS = localStorage.getItem('follower_followingIDS');
+                            follower_followingIDS = decodeURIComponent(follower_followingIDS);
+                            follower_followingIDS = JSON.parse(follower_followingIDS);
+                            try {
+                                localStorage.removeItem('follower_followingIDS');
+                                follower_followingIDS.following.push(seller_id);
+                                console.log(follower_followingIDS)
+                                follower_following = JSON.stringify(follower_followingIDS);
+                                follower_following = encodeURIComponent(follower_following);
+                                localStorage.setItem('follower_followingIDS', follower_following);
+                                check_following();
+                            } catch (error) {
+                                throw error;
+                            }
+                        }
+                    }
+                )
+            }
+        })
+
+
+        slider_img.ondblclick = () => {
+            main_zoom.classList.add('display');
+            main_zoom.replaceChildren();
+            for (i of arr_img_prd) {
+                var img_ = document.createElement("img");
+                img_.src = i;
+                main_zoom.append(img_);
+            }
+            window.onclick = (e) => {
+                if (!img_.contains(e.target)) {
+                    main_zoom.classList.remove('display');
+                }
+            }
+        }
+
+
+        function load_prdect() {
+            url = window.location.search;
+            ids = url.substring(url.indexOf('=') + 1);
+            ids = decodeURIComponent(ids);
+            ids = JSON.parse(ids);
+            id_prodect = ids[0];
+            id_user = ids[1];
+            $(document).ready(
+                function () {
+                    $.post("pg_mr_ab_prdo.php", {
+                        id_prodect: id_prodect
+                    }).done(
+                        res => {
+                            data = JSON.parse(res);
+                            delete data[0]['password']
+                            prd_name = data[0].name_product;
+                            prd_descrition = data[0].description;
+                            prd_price = parseFloat(data[0].price);
+                            prd_etat = data[0].statu_prd;
+                            prd_adress = data[0].local_product;
+                            prd_available = data[0].available;
+                            prd_type = data[0].type_product;
+                            seller_id = data[0].id_user;
+                            seller_img = data[0].link_profil;
+                            if (id_user == seller_id) {
+                                btn_order.disabled = true
+                                btn_order.innerHTML = "your product"
+                            }
+                            cnt_sescr_prd.innerHTML = prd_descrition;
+                            price_2.innerHTML = prd_price + " $";
+                            seller_full_name = `${data[0].last_name}  ${data[0].first_name}  `
+                            etat.innerHTML = prd_etat;
+                            seller_name.innerHTML = seller_full_name;
+                            cnt_img_seller.querySelector("img").src = seller_img;
+                            locatisation.innerHTML = prd_adress;
+                            type_prd.innerHTML = prd_type;
+                            available_txt.innerHTML = prd_available;
+                            $('.name_prd').html(prd_name);
+                            arr_img_prd = data[0].des_img.split(',');
+                            prd_src_img = arr_img_prd[0];
+                            arr_img_prd.forEach(
+                                (link) => {
+                                    let cloned_img = cnt_img1.cloneNode(true);
+                                    cloned_img.querySelector("img").src = link;
+                                    cloned_img.classList.add('display');
+                                    slider_img.appendChild(cloned_img);
+                                }
+                            )
+
+                            let argv_starts = data['AVG_stars'];
+                            if (argv_starts.length > 0) {
+                                argv_starts = argv_starts.substring(0, argv_starts.indexOf(".") + 2)
+                                inr_avg_rat.innerHTML = argv_starts;
+                            }
+
+                            totale_peopol_rat.innerHTML = `${data['count_users']}   people expressed their opinion about this product`;
+
+
+                            str_scro_img();
+                            check_following();
+                            set_rating();
+                            zoom_in_prd();
+                        }
+                    )
+                }
+            )
+        }
+
+        let cnt_imgs_sliders
+        let mouse_in = false;
+
+        function str_scro_img() {
+            cnt_imgs_sliders = slider_img.querySelectorAll(".cnt_img1");
+            cn = cnt_imgs_sliders[0].offsetWidth;
+            if (!mouse_in) {
+                 my_inter1 = setInterval(
+                    function () {
+                        if (lrn_ims_sl < cnt_imgs_sliders.length - 1) {
+                            slider_img.style.transform = `translateX(${-cn}px)`;
+                            lrn_ims_sl++;
+                            cn += cnt_imgs_sliders[0].offsetWidth;
+                        }
+
+                        else {
+                            lrn_ims_sl = 0;
+                            cn = cnt_imgs_sliders[0].offsetWidth;
+                            slider_img.style.transform = `translateX(${0}px)`;
+                        }
+                    }
+                    , 2500
+                )
+            }
+
+        }
+
+        function zoom_in_prd() {
+            let x, y, width, height;
+            cnt_imgs_sliders.forEach(m => {
+
+                m.onmouseleave = () => {
+                    mouse_in = false;
+                    str_scro_img();
+
+                }
+                m.onmouseenter = () => {
+                    let size = m.getBoundingClientRect();
+                    x = size.x;
+                    y = size.y;
+                    width = size.width;
+                    height = size.height;
+                    // mouse_in = false;
+                    clearInterval(my_inter1);
+
+
+                }
+                m.onmousemove = (e) => {
+                    let h = (e.clientX - y) / width * 100;
+                    let v = (e.clientY - y) / height * 100;
+                    m.style.setProperty("--x", h + "%");
+                    m.style.setProperty("--y", v + "%");
+                }
+            })
+        }
+
+
+        setInterval(go_to_mr_l, 1300);
+        function go_to_mr_l() {
+            var founded = document.querySelectorAll(".cnt_product ");
+            founded.forEach(
+                (fond) => {
+                    fond.onclick = () => {
+                        let id_prod = fond.getAttribute("id");
+                        ids = [id_prod, id_user];
+                        ids = JSON.stringify(ids);
+                        ids = encodeURIComponent(ids);
+                        let host_name = window.location.origin;
+                        let uRl = host_name + "/SETWEB_project/mg_mr_ab_prd.html?ids=" + ids;
+                        window.location.href = uRl;
+                    }
+                }
+            )
+        }
+
+        function check_following() {
+            var follower_followingIDS = localStorage.getItem('follower_followingIDS');
+            follower_followingIDS = decodeURIComponent(follower_followingIDS);
+            follower_followingIDS = JSON.parse(follower_followingIDS);
+            if (follower_followingIDS.following.includes(seller_id)) {
+                btn_follow_seller.querySelector("img").src = 'img3/notification-bell.png'
+                btn_follow_seller.querySelector("p").innerHTML = "Following";
+                btn_follow_seller.classList.add('followed_style');
+            }
+        }
+
+
+
+        setTimeout(
+            function load_more_prf() {
+                $.post(
+                    'select_mor.php', { id_prodect: id_prodect }
+                ).done(
+                    (data) => {
+                        data = JSON.parse(data);
+                        for (i of data) {
+
+                            var arr_img_prd = i.des_img.substring(0, i.des_img.indexOf(","));
+                            var cloned_product = cnt_product.cloneNode(true);
+                            cloned_product.querySelector(".descriptionTEXT").innerHTML = i['description'];
+                            cloned_product.querySelector(".cntIMGPRODECT img").src = i['des_img'];
+                            cloned_product.querySelector(".price").innerHTML = i['price'] + ' $ ';
+                            cloned_product.querySelector(".adress").innerHTML = i['local_product'];
+                            cloned_product.id = i['id_product'];
+                            cloned_product.classList.add('display')
+                            if (arr_img_prd.length > 0) {
+                                cloned_product.querySelector(".cntIMGPRODECT img").src = arr_img_prd;
+                            } else {
+                                cloned_product.querySelector(".cntIMGPRODECT img").src = i.des_img;
+                            } main_pg2.appendChild(cloned_product);
+                        }
+                    }
+                )
+
+
+            }, 600);
+
+        let popup_msg = document.querySelector(".popup_msg");
+        let confirm_order_div = document.querySelector(".confirm_order_div");
+        let cnt_cend_msg = document.querySelector(".cnt_cend_msg");
+
+        const btn_finish = document.getElementById("btn_finish");
+        const bnt_sure = document.getElementById("bnt_sure");
+        const btn_cancel = document.getElementById("btn_cancel");
+        const btn_order = document.getElementById("btn_order");
+        btn_order.addEventListener("click", () => {
+            confirm_order_div.querySelector(".te_conf").innerHTML = `send  order to ${seller_name.innerHTML}  about ${document.querySelector(".name_prd").innerHTML + " "}`
+            cnt_cend_msg.classList.add("display");
+            confirm_order_div.classList.add("display");
+            btn_cancel.onclick = () => {
+                cnt_cend_msg.classList.remove("display");
+                confirm_order_div.classList.remove("display");
+            }
+            bnt_sure.onclick = send_order;
+        })
+        btn_finish.addEventListener("click", () => {
+            popup_msg.classList.remove("display");
+            cnt_cend_msg.classList.remove("display");
+            btn_order.innerHTML = "orderd";
+            btn_order.disabled = true
+        })
+
+        function send_order() {
+            $(document).ready(
+                () => {
+                    $.post(
+                        "send_order.php", {
+                        id_product: id_prodect,
+                        id_user: id_user,
+                        id_seller: seller_id
+                    }
+                    ).done(
+                        res => {
+                            if (res == "sended") {
+                                confirm_order_div.classList.remove("display");
+                                popup_msg.classList.add("display");
+                            }
+                        }
+                    )
+                }
+            )
+
+
+
+        }
+
+    </script>
+    <script>
+        let btn_add_tobasket = document.getElementById("btn_add_tobasket");
+        let btn_conf_add = document.getElementById("btn_conf_add");
+        let btn_cancel_add = document.getElementById("btn_cancel_add")
+        let main_conf_add_to_basket = document.querySelector(".main_conf_add_to_basket");
+        let quantite_num = document.getElementById("quantite_num")
+        let btn_ueg_dlv = document.querySelector(".btn_ueg_dlv")
+        let btn_add1 = document.querySelector(".btn_add1");
+        let btn_add2 = document.querySelector(".btn_add2");
+        let price2 = document.querySelector(".price2");
+        let name_prd_2 = document.querySelector(".name_prd_2");
+        let cnt_imgs_prd2 = document.querySelector(".cnt_imgs_prd2");
+        let totale_price = document.querySelector(".totale_price");
+
+        let T_price;
+        btn_add_tobasket.onclick = () => {
+            quntite_n = 1
+            quantite_num.innerHTML = quntite_n;
+
+            cnt_imgs_prd2.querySelector("img").src = prd_src_img;
+            name_prd_2.innerHTML = prd_name
+            main_conf_add_to_basket.classList.add("display");
+            price2.innerHTML = prd_price + "$";
+            urg_del = 'none';
+            T_price = parseFloat(prd_price);
+            totale_price.innerHTML = T_price;
+            btn_cancel_add.onclick = (e) => {
+                main_conf_add_to_basket.classList.remove("display");
+            }
+            if (btn_ueg_dlv.querySelector("img")) {
+                btn_ueg_dlv.querySelector("img").remove();
+                btn_ueg_dlv.classList.remove("active_urgen");
+
+            }
+        }
+
+        quntite_n = 1
+        var del_add = false;
+        var urg_del = 'none';
+
+        // id_prodect = ids[0];
+        //     id_user = ids[1];
+
+        quantite_num.innerHTML = quntite_n;
+        btn_add1.onclick = () => {
+            quntite_n += 1
+            quantite_num.innerHTML = quntite_n;
+            T_price += prd_price;
+            totale_price.innerHTML = T_price;
+
+        }
+        btn_add2.onclick = () => {
+            if (quntite_n > 1) {
+                quntite_n -= 1
+                quantite_num.innerHTML = quntite_n;
+                T_price = +T_price - prd_price;
+                totale_price.innerHTML = T_price;
+
+            }
+
+        }
+        btn_ueg_dlv.addEventListener("click", () => {
+            if (!del_add) {
+                if (!btn_ueg_dlv.querySelector("img")) {
+                    let img = document.createElement("img");
+                    img.src = "img3/done.png";
+                    btn_ueg_dlv.insertBefore(img, btn_ueg_dlv.children[0])
+                    btn_ueg_dlv.classList.add("active_urgen");
+                    T_price = +T_price + 20;
+                    totale_price.innerHTML = T_price;
+                    urg_del = 'yes';
+                }
+                else {
+                    btn_ueg_dlv.querySelector("img").remove();
+                    btn_ueg_dlv.classList.remove("active_urgen");
+                    T_price = +T_price - 20;
+                    totale_price.innerHTML = T_price;
+                    urg_del = 'none';
+
+                }
+            }
+
+        })
+
+        btn_conf_add.onclick = () => {
+            let main_order = {
+                'prd_id': id_prodect,
+                'user_id': id_user,
+                'seller_id': seller_id,
+                'qautite_prd': quntite_n,
+                'urgc_dlvr': urg_del
+            }
+            $.post(
+                "add_to_basket.php", {
+                data: main_order
+            }
+            ).done(
+                res => {
+                    if (res == "added to basket succesful")
+                        main_conf_add_to_basket.classList.remove("display");
+                    document.querySelector(".alert_saved").innerHTML = "Added successfull";
+                    document.querySelector(".alert_saved").classList.add("display");
+                    setTimeout(
+                        () => {
+                            document.querySelector(".alert_saved").classList.remove("display");
+                        }, 3000
+                    )
+                }
+
+            )
+        }
+
+    </script>
+    <script>
+
+        function _(m) { console.log(m) }
+        let cnt_rating_ = document.querySelector(".backgroundBlack_DV");
+        let btn_add_desc_rat = document.querySelector(".btn_add_desc_rat");
+        btn_add_desc_rat.addEventListener("click", () => {
+            cnt_rating_.classList.add("display");
+        })
+        function set_rating() {
+            var num_starts = 0;
+            let rating = document.querySelector(".rating");
+            let btn_send_rating = document.querySelector(".btn_send_ratin")
+            let in_desc_rating = document.querySelector("#in_desc_rating");
+            let lbl_rating2 = rating.querySelectorAll(".lbl_rating2");
+            let arr_lbl_rating2 = Array.from(lbl_rating2);
+            arr_lbl_rating2.forEach(
+                inp => {
+                    inp.onclick = () => {
+                        num_starts = 0;
+                        arr_lbl_rating2.forEach(lbl => lbl.classList.remove('star_on'));
+                        num_starts = arr_lbl_rating2.indexOf(inp) + 1;
+                        for (var j = 0; j < num_starts; j++) {
+                            lbl_rating2[j].classList.add('star_on');
+                        }
+                    }
+                }
+            )
+            btn_send_rating.addEventListener("click", () => {
+                if (num_starts > 0) {
+                    $(document).ready(
+                        () => {
+                            $.post(
+                                'set_rating.php', {
+                                id_user: id_user,
+                                id_prodect: id_prodect,
+                                stars: num_starts,
+                                desc: in_desc_rating.innerHTML
+                            }
+                            ).done(
+                                res => {
+                                    res = JSON.parse(res)
+                                    cnt_rating_.classList.remove("display");
+                                    document.querySelector(".alert_saved").innerHTML = "submited successfully";
+                                    document.querySelector(".alert_saved").classList.add("display");
+                                    setTimeout(
+                                        () => {
+                                            document.querySelector(".alert_saved").classList.remove("display");
+                                        }, 3000
+                                    )
+                                }
+                            )
+                        }
+                    )
+                }
+            })
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            min-height: 800px;
+            align-items: center;
+        }
+
+        .cnt_img {
+            max-width: 500px;
+            width: 500px;
+            border: solid 1px black;
+            height: 500px;
+            max-height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cnt_img img:hover {
+            --zoom: 2.5;
+        }
+
+        .cnt_img img {
+            max-width: 100%;
+            position: absolute;
+            -o-object-fit: cover;
+            object-fit: cover;
+            transform: scale(var(--zoom, 1));
+            transform-origin: var(--x) var(--y);
+            transition: transform .3s ease;
+            cursor: zoom-in;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cnt_img">
+        <img src="files_product22/92a1a0cf-8a16-46c3-a952-cb3d8e38af7e.jpeg" alt="">
+    </div>
+    <script>
+        let x, y, width, height;
+        let img = document.querySelector('img')
+
+        img.onmouseenter = () => {
+            let size =  img.getBoundingClientRect();
+            x= size.x;
+            y= size.y;
+            width= size.width;
+            height= size.height;
+        }
+        img.onmousemove =(e) =>{
+            let  h= (e.clientX -y ) / width*100;
+            let v= (e.clientY -y) / height*100
+            img.style.setProperty("--x" , h+"%")
+            img.style.setProperty("--y" , v+"%")
+        }
+    </script>
+</body>
+
+</html>

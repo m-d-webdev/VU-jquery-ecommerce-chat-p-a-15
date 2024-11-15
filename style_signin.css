@@ -1,0 +1,587 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 12px;
+    font-family: "Teachers";
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.main1 {
+    width: 95%;
+    height: 95%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.svg_1 {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.my_from1 {
+    width: 45%;
+    border: solid 1px rgba(0, 0, 0, 0.13);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    display: none;
+}
+
+.ani_my_from1 {
+    animation: tonon 1s alternate;
+
+}
+
+.ani_my_from2 {
+    animation: tonon2 1s alternate;
+
+}
+
+@keyframes tonon {
+    20% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(0);
+
+    }
+}
+
+
+@keyframes tonon2 {
+    0% {
+        transform: scale(0);
+    }
+
+}
+
+.cnt_inpy1 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.cnt_inpy1 label {
+    position: absolute;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.cnt_inpy1 input:focus~.lbl_forinp1,
+.cnt_inpy1 input:not(:placeholder-shown)~.lbl_forinp1 {
+    transform: translate(-160px, -17px);
+    font-size: 10px;
+    transition: .2s;
+    opacity: .7;
+    font-weight: 400;
+}
+
+.cnt_inpy1 input:focus~.lbl_forinp1 {
+    color: blue;
+}
+
+.cnt_inpy1 input:focus {
+    border: solid 2px rgb(57, 126, 255);
+    background-color: #fff;
+}
+
+.cnt_inpy1 input {
+    width: 98%;
+    border-radius: 5px;
+    border: solid 1px rgba(0, 0, 0, 0.19);
+    outline: none;
+    max-width: 500px;
+    font-size: 18px;
+    font-family: "Teachers";
+    padding: 20px 10px 5px 20px;
+}
+
+.cnt_BD {
+    width: 95%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 5px 8px 8px;
+    border-radius: 6px;
+    border: solid 1px rgba(0, 0, 0, 0.19);
+    position: relative;
+}
+
+.title_bd {
+    top: -13px;
+    left: 5px;
+    position: absolute;
+    opacity: .7;
+    padding: 5px 10px;
+
+    background-color: #fff;
+    font-weight: 900;
+}
+
+.cnt_BD div {
+    position: relative;
+    display: flex;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+}
+
+.cnt_BD div input:focus~.lbl_bd,
+.cnt_BD div input:not(:placeholder-shown)~.lbl_bd {
+    transform: translate(-130%, -13px);
+    transition: .2s;
+    opacity: .7;
+    font-size: 9px;
+    z-index: 5;
+}
+
+.cnt_BD div input:focus~.lbl_bd {
+    color: blue;
+}
+
+.cnt_BD div input:focus {
+    border: solid 1px rgb(57, 126, 255);
+    background-color: #fff;
+}
+
+.cnt_BD div input {
+    border-radius: 6px;
+    outline: none;
+    width: 99%;
+    padding: 20px 5px 3px 10px;
+    font-size: 16px;
+    border: solid 1px rgba(0, 0, 0, 0.19);
+}
+
+.cnt_BD div label {
+
+    position: absolute;
+    font-size: 12px;
+    font-weight: 600;
+
+}
+
+
+.cnt_gender {
+
+    position: relative;
+    width: 95%;
+    max-width: 500px;
+    border: solid 1px rgba(0, 0, 0, 0.233);
+    display: flex;
+    border-radius: 6px;
+    padding: 15px 5px 5px 5px;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.p_gender {
+
+    font-weight: 600;
+    left: 10px;
+    position: absolute;
+    top: -15px;
+    padding: 5px 10px;
+    background-color: #fff;
+}
+
+.cnt_gender div {
+
+    border-radius: 8px;
+    padding: 5px 10px;
+    border: solid 1px rgba(0, 0, 0, 0.252);
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cnt_gender .add_colorGNDR {
+    background-color: rgba(130, 253, 130, 0.963);
+    transition: .3s;
+
+}
+
+.cnt_gender div p {
+
+    font-size: 12px;
+    margin-top: 6px;
+    font-weight: 600;
+
+}
+
+.cnt_gender div img {
+
+    width: 40px;
+
+}
+
+
+
+.cnt_inpy3 label {
+    position: absolute;
+    font-weight: 600;
+    font-size: 12px;
+    top: -13px;
+    background-color: #fff;
+    padding: 5px 10px;
+    left: 10px;
+}
+
+
+
+.cnt_inpy3 #inp_phone:focus {
+    border-bottom: solid 1px rgb(23, 104, 255);
+    background-color: #fff;
+}
+
+.cnt_inpy3 #inp_phone {
+    border: none;
+    width: 90%;
+    border-bottom: solid 1px black;
+    outline: none;
+    font-size: 18px;
+    padding: 20px 10px 10px 20px;
+}
+
+.cnt_inpy3 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    padding: 6px;
+    border: solid 1px rgba(0, 0, 0, 0.274);
+    max-width: 500px;
+    position: relative;
+}
+
+
+.dv_nmbr {
+    width: 70%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.cnt_inpy1 #inp_phone {
+    width: 100%;
+}
+
+#sel_number {
+    width: 40%;
+    border: none;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 8px;
+    outline: none;
+    padding: 20px 10px 3px 5px;
+    border-bottom: solid 1px black;
+}
+
+#sel_number .btn_open_menu_contie {
+    width: 13px;
+    margin-left: 10px;
+}
+
+#sel_number p {
+    font-size: 17px;
+    font-weight: 600;
+
+}
+
+.cnt_serachnum {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.536));
+    position: absolute;
+    z-index: 3;
+    padding: 10px;
+    bottom: 50px;
+    border-radius: 10px;
+    left: 0;
+}
+
+.list_num::-webkit-scrollbar-thumb {
+    background-color: rgb(51, 0, 255);
+}
+
+.list_num::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dv_cntrie h6 {
+
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.dv_cntrie img {
+    width: 25px;
+    margin-right: 8px;
+}
+
+.dv_cntrie {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 3px;
+    padding: 3px;
+    font-size: 14px;
+    opacity: .7;
+    display: none;
+    font-weight: 600;
+}
+
+.dv_cntrie:hover {
+    background-color: rgb(0, 0, 255);
+    color: #fff;
+}
+
+/* .cnt_BD div input:focus~.lbl_bd, */
+
+.cnt_BD div .atert_inp:focus~.lbl_bd {
+    color: red;
+}
+
+.cnt_BD div .atert_inp:focus {
+    filter: drop-shadow(0 0 1px rgba(255, 0, 0, 0.496));
+    border: solid 1px rgba(255, 0, 0, 0.719);
+}
+
+.cnt_BD div .atert_inp {
+    filter: drop-shadow(0 0 1px rgba(255, 0, 0, 0.496));
+    border: solid 1px rgba(255, 0, 0, 0.719);
+}
+
+.submit_1 {
+    width: 100%;
+    max-width: 500px;
+    padding: 6px;
+    background-color: rgb(24, 78, 255);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+
+}
+
+
+/* FORM  */
+.from_2 {
+    width: 45%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    border: solid 1px rgba(0, 0, 0, 0.218);
+    border-radius: 10px;
+    display: none;
+}
+
+.p_laststage {
+    position: absolute;
+    top: -60px;
+    text-align: center;
+    font-size: 17px;
+    font-family: "Kanit", sans-serif;
+}
+
+
+.cnt_fro2 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+}
+
+.cnt_fro2 input {
+    width: 100%;
+    border-radius: 5px;
+    border: solid 1px rgba(0, 0, 0, 0.19);
+    outline: none;
+    font-size: 18px;
+    padding: 20px 10px 5px 20px;
+}
+
+.cnt_fro2 label {
+    position: absolute;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.txt_email_already_exists {
+    position: absolute;
+    bottom: -20px;
+    color: red;
+    left: 5px;
+    display: none;
+}
+
+.cnt_fro2 input:focus~.lbl__pas,
+.cnt_fro2 input:not(:placeholder-shown)~.lbl__pas {
+    transform: translate(-180px, -17px);
+    font-size: 10px;
+    transition: .2s;
+    opacity: .7;
+    font-weight: 400;
+}
+
+.cnt_fro2 input:focus~.lbl__pas {
+    color: rgb(0, 68, 255);
+}
+
+.cnt_fro2 input:focus {
+    border: solid 1px rgb(23, 104, 255);
+    background-color: #fff;
+}
+
+
+
+.btn_submit {
+    width: 100%;
+    max-width: 500px;
+    padding: 6px;
+    background-color: rgb(14, 54, 255);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+
+}
+
+.btn_Back:hover {
+    opacity: 1;
+}
+
+.btn_Back {
+    width: 100px;
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    padding: 4px;
+    opacity: .6;
+    background-color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #fff;
+}
+
+.cnt_fro2 .alertERR:not(:placeholder-shown)~.lbl__pas {
+    color: red;
+}
+
+.cnt_fro2 .alertERR {
+    border: solid 1px red;
+    background-color: #fff;
+    filter: drop-shadow(0 0 1 rgb(255, 0, 0));
+}
+
+.cnt_fro2 .alertERR:focus~.lbl__pas {
+    color: black;
+}
+
+.btn_afficher {
+    font-size: 14px;
+    font-weight: 600;
+    position: absolute;
+    bottom: -20px;
+    right: 15px;
+    cursor: pointer;
+}
+
+@media screen and (max-width : 500px) {
+    .svg_1 {
+        display: none;
+    }
+
+    .my_from1 {
+        padding: 4px;
+        width: 100%;
+    }
+
+    .from_2 {
+        padding: 4px;
+        width: 100%;
+    }
+
+    .cnt_inpy1 input:focus~.lbl_forinp1,
+    .cnt_inpy1 input:not(:placeholder-shown)~.lbl_forinp1 {
+        transform: translate(-140px, -17px);
+        font-size: 8px;
+    }
+
+    .cnt_inpy1 label {
+        font-size: 11px;
+    }
+
+    .cnt_inpy1 input:focus {
+        border: solid 1px rgb(57, 126, 255);
+        background-color: #fff;
+    }
+
+    .cnt_fro2 input:focus~.lbl__pas,
+    .cnt_fro2 input:not(:placeholder-shown)~.lbl__pas {
+        transform: translate(-150px, -17px);
+        font-size: 8px;
+        transition: .2s;
+        opacity: .7;
+        font-weight: 400;
+    }
+
+    .cnt_fro2 label {
+        font-size: 11px;
+    }
+
+    .cnt_fro2 input:focus~.lbl__pas,
+    .cnt_fro2 input:not(:placeholder-shown)~.lbl__pas {
+        transform: translate(-180px, -17px);
+        font-size: 8px;
+        transition: .2s;
+        opacity: .7;
+        font-weight: 400;
+    }
+
+}
+
+
+
+.display_f {
+    display: flex;
+}
